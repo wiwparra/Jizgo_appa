@@ -1,0 +1,2633 @@
+{
+  "name": "Hogar Finanzas · Dashboard",
+  "version": 1,
+  "notice": "Datos ficticios de diseño. No representa una sincronización ni validación nativa.",
+  "frames": [
+    {
+      "type": "frame",
+      "name": "Dashboard · iPhone · Claro",
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 844,
+      "fill": "#F5F7F6",
+      "radius": 0,
+      "stroke": null,
+      "children": [
+        {
+          "type": "text",
+          "name": "Hora",
+          "text": "9:41",
+          "x": 26,
+          "y": 14,
+          "width": 70,
+          "height": 22,
+          "size": 14,
+          "color": "#182A24",
+          "weight": "Semi Bold",
+          "align": "LEFT"
+        },
+        {
+          "type": "icon",
+          "name": "Cobertura",
+          "x": 286,
+          "y": 14,
+          "width": 18,
+          "height": 18,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#182A24\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 20v-4m5 4V12m5 8V8m5 12V4\"/></g></svg>"
+        },
+        {
+          "type": "icon",
+          "name": "Wifi",
+          "x": 310,
+          "y": 14,
+          "width": 18,
+          "height": 18,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#182A24\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 8a15 15 0 0 1 18 0M6 12a10 10 0 0 1 12 0m-9 4a5 5 0 0 1 6 0\"/><circle cx=\"12\" cy=\"20\" r=\".5\"/></g></svg>"
+        },
+        {
+          "type": "icon",
+          "name": "Batería",
+          "x": 334,
+          "y": 13,
+          "width": 21,
+          "height": 21,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"21\" height=\"21\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#182A24\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"6\" width=\"17\" height=\"12\" rx=\"3\"/><path d=\"M22 10v4M6 10h9v4H6z\"/></g></svg>"
+        },
+        {
+          "type": "text",
+          "name": "Marca",
+          "text": "HOGAR FINANZAS",
+          "x": 22,
+          "y": 62,
+          "width": 260,
+          "height": 18,
+          "size": 10,
+          "color": "#697A72",
+          "weight": "Semi Bold",
+          "align": "LEFT"
+        },
+        {
+          "type": "text",
+          "name": "Título",
+          "text": "Resumen",
+          "x": 22,
+          "y": 89,
+          "width": 280,
+          "height": 42,
+          "size": 30,
+          "color": "#182A24",
+          "weight": "Bold",
+          "align": "LEFT"
+        },
+        {
+          "type": "frame",
+          "name": "Perfil",
+          "x": 330,
+          "y": 82,
+          "width": 40,
+          "height": 40,
+          "fill": "#E7F2EC",
+          "radius": 20,
+          "stroke": null,
+          "children": [
+            {
+              "type": "text",
+              "name": "Iniciales",
+              "text": "HF",
+              "x": 0,
+              "y": 10,
+              "width": 40,
+              "height": 22,
+              "size": 13,
+              "color": "#176B55",
+              "weight": "Bold",
+              "align": "CENTER"
+            }
+          ]
+        },
+        {
+          "type": "icon",
+          "name": "Mes anterior",
+          "x": 20,
+          "y": 150,
+          "width": 20,
+          "height": 20,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#697A72\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m14 6-6 6 6 6\"/></g></svg>"
+        },
+        {
+          "type": "text",
+          "name": "Mes",
+          "text": "Noviembre de 2026",
+          "x": 56,
+          "y": 146,
+          "width": 278,
+          "height": 28,
+          "size": 16,
+          "color": "#182A24",
+          "weight": "Medium",
+          "align": "CENTER"
+        },
+        {
+          "type": "icon",
+          "name": "Mes siguiente",
+          "x": 350,
+          "y": 150,
+          "width": 20,
+          "height": 20,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#697A72\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 6 6 6-6 6\"/></g></svg>"
+        },
+        {
+          "type": "frame",
+          "name": "Saldo · tarjeta principal",
+          "x": 20,
+          "y": 194,
+          "width": 350,
+          "height": 190,
+          "fill": "#FFFFFF",
+          "radius": 22,
+          "stroke": "#DFE7E2",
+          "children": [
+            {
+              "type": "text",
+              "name": "Título del saldo",
+              "text": "Saldo registrado total",
+              "x": 20,
+              "y": 18,
+              "width": 310,
+              "height": 22,
+              "size": 13,
+              "color": "#697A72",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Saldo",
+              "text": "2.500,00 €",
+              "x": 20,
+              "y": 46,
+              "width": 310,
+              "height": 48,
+              "size": 38,
+              "color": "#182A24",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "frame",
+              "name": "Separador",
+              "x": 20,
+              "y": 104,
+              "width": 310,
+              "height": 1,
+              "fill": "#DFE7E2",
+              "radius": 0,
+              "stroke": null,
+              "children": []
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta reserva",
+              "text": "Reservado",
+              "x": 20,
+              "y": 118,
+              "width": 145,
+              "height": 18,
+              "size": 11,
+              "color": "#697A72",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe reserva",
+              "text": "600,00 €",
+              "x": 20,
+              "y": 139,
+              "width": 145,
+              "height": 26,
+              "size": 18,
+              "color": "#182A24",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta sin reservar",
+              "text": "Sin reservar",
+              "x": 184,
+              "y": 118,
+              "width": 146,
+              "height": 18,
+              "size": 11,
+              "color": "#697A72",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe sin reservar",
+              "text": "1.900,00 €",
+              "x": 184,
+              "y": 139,
+              "width": 146,
+              "height": 26,
+              "size": 18,
+              "color": "#176B55",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Aclaración",
+              "text": "Sin reservar no descuenta recibos futuros.",
+              "x": 20,
+              "y": 171,
+              "width": 310,
+              "height": 14,
+              "size": 10,
+              "color": "#697A72",
+              "weight": "Regular",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Mes · Ingresos",
+          "x": 20,
+          "y": 402,
+          "width": 110,
+          "height": 104,
+          "fill": "#FFFFFF",
+          "radius": 16,
+          "stroke": "#DFE7E2",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Icono Ingresos",
+              "x": 12,
+              "y": 12,
+              "width": 18,
+              "height": 18,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#176B55\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17 7 7 17m0-9v9h9\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta Ingresos",
+              "text": "Ingresos",
+              "x": 12,
+              "y": 38,
+              "width": 86,
+              "height": 18,
+              "size": 11,
+              "color": "#697A72",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe Ingresos",
+              "text": "2.000,00 €",
+              "x": 12,
+              "y": 61,
+              "width": 96,
+              "height": 25,
+              "size": 16,
+              "color": "#176B55",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Mes · Gastos",
+          "x": 140,
+          "y": 402,
+          "width": 110,
+          "height": 104,
+          "fill": "#FFFFFF",
+          "radius": 16,
+          "stroke": "#DFE7E2",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Icono Gastos",
+              "x": 12,
+              "y": 12,
+              "width": 18,
+              "height": 18,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#9B4C39\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7m0 9V7H8\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta Gastos",
+              "text": "Gastos",
+              "x": 12,
+              "y": 38,
+              "width": 86,
+              "height": 18,
+              "size": 11,
+              "color": "#697A72",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe Gastos",
+              "text": "500,00 €",
+              "x": 12,
+              "y": 61,
+              "width": 96,
+              "height": 25,
+              "size": 16,
+              "color": "#9B4C39",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Mes · Resultado",
+          "x": 260,
+          "y": 402,
+          "width": 110,
+          "height": 104,
+          "fill": "#FFFFFF",
+          "radius": 16,
+          "stroke": "#DFE7E2",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Icono Resultado",
+              "x": 12,
+              "y": 12,
+              "width": 18,
+              "height": 18,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#182A24\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 9h14M5 15h14\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta Resultado",
+              "text": "Resultado",
+              "x": 12,
+              "y": 38,
+              "width": 86,
+              "height": 18,
+              "size": 11,
+              "color": "#697A72",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe Resultado",
+              "text": "1.500,00 €",
+              "x": 12,
+              "y": 61,
+              "width": 96,
+              "height": 25,
+              "size": 16,
+              "color": "#182A24",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Acción · registrar gasto",
+          "x": 20,
+          "y": 530,
+          "width": 350,
+          "height": 54,
+          "fill": "#176B55",
+          "radius": 16,
+          "stroke": null,
+          "children": [
+            {
+              "type": "icon",
+              "name": "Más",
+              "x": 98,
+              "y": 15,
+              "width": 22,
+              "height": 22,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 5v14M5 12h14\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Texto registrar",
+              "text": "Registrar gasto",
+              "x": 130,
+              "y": 15,
+              "width": 200,
+              "height": 25,
+              "size": 16,
+              "color": "#FFFFFF",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Acción · aviso bancario",
+          "x": 20,
+          "y": 596,
+          "width": 350,
+          "height": 46,
+          "fill": "#FFFFFF",
+          "radius": 14,
+          "stroke": "#DFE7E2",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Escanear aviso",
+              "x": 82,
+              "y": 12,
+              "width": 22,
+              "height": 22,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#176B55\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M7 9h10M7 13h7M7 17h4\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Texto aviso",
+              "text": "Desde aviso bancario",
+              "x": 114,
+              "y": 13,
+              "width": 220,
+              "height": 23,
+              "size": 14,
+              "color": "#182A24",
+              "weight": "Medium",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Detalle cerrado",
+          "x": 20,
+          "y": 658,
+          "width": 350,
+          "height": 48,
+          "fill": "#FFFFFF",
+          "radius": 14,
+          "stroke": "#DFE7E2",
+          "children": [
+            {
+              "type": "text",
+              "name": "Etiqueta detalle",
+              "text": "Detalle y evolución",
+              "x": 16,
+              "y": 14,
+              "width": 270,
+              "height": 22,
+              "size": 14,
+              "color": "#182A24",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "icon",
+              "name": "Abrir detalle",
+              "x": 310,
+              "y": 14,
+              "width": 20,
+              "height": 20,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#697A72\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 6 6 6-6 6\"/></g></svg>"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Navegación inferior · despejada",
+          "x": 0,
+          "y": 750,
+          "width": 390,
+          "height": 94,
+          "fill": "#FFFFFF",
+          "radius": 0,
+          "stroke": "#DFE7E2",
+          "children": [
+            {
+              "type": "frame",
+              "name": "Selección Resumen",
+              "x": 16,
+              "y": 11,
+              "width": 46,
+              "height": 30,
+              "fill": "#E7F2EC",
+              "radius": 12,
+              "stroke": null,
+              "children": []
+            },
+            {
+              "type": "icon",
+              "name": "Navegación · Resumen",
+              "x": 27,
+              "y": 14,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#176B55\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 20V10m8 10V4m8 16v-7\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Pestaña Resumen",
+              "text": "Resumen",
+              "x": 0,
+              "y": 47,
+              "width": 78,
+              "height": 18,
+              "size": 10,
+              "color": "#176B55",
+              "weight": "Medium",
+              "align": "CENTER"
+            },
+            {
+              "type": "icon",
+              "name": "Navegación · Movimientos",
+              "x": 105,
+              "y": 14,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#697A72\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 3v18m-4-4 4 4 4-4m4 4V3m-4 4 4-4 4 4\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Pestaña Movimientos",
+              "text": "Movimientos",
+              "x": 78,
+              "y": 47,
+              "width": 78,
+              "height": 18,
+              "size": 10,
+              "color": "#697A72",
+              "weight": "Medium",
+              "align": "CENTER"
+            },
+            {
+              "type": "icon",
+              "name": "Navegación · Cuentas",
+              "x": 183,
+              "y": 14,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#697A72\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"15\" rx=\"3\"/><path d=\"M3 9h18m-5 4h5v4h-5z\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Pestaña Cuentas",
+              "text": "Cuentas",
+              "x": 156,
+              "y": 47,
+              "width": 78,
+              "height": 18,
+              "size": 10,
+              "color": "#697A72",
+              "weight": "Medium",
+              "align": "CENTER"
+            },
+            {
+              "type": "icon",
+              "name": "Navegación · Planes",
+              "x": 261,
+              "y": 14,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#697A72\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"12\" cy=\"12\" r=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"1\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Pestaña Planes",
+              "text": "Planes",
+              "x": 234,
+              "y": 47,
+              "width": 78,
+              "height": 18,
+              "size": 10,
+              "color": "#697A72",
+              "weight": "Medium",
+              "align": "CENTER"
+            },
+            {
+              "type": "icon",
+              "name": "Navegación · Hogar",
+              "x": 339,
+              "y": 14,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#697A72\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 11 12 3l9 8M6 10v11h12V10M10 21v-7h4v7\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Pestaña Hogar",
+              "text": "Hogar",
+              "x": 312,
+              "y": 47,
+              "width": 78,
+              "height": 18,
+              "size": 10,
+              "color": "#697A72",
+              "weight": "Medium",
+              "align": "CENTER"
+            },
+            {
+              "type": "frame",
+              "name": "Indicador de inicio",
+              "x": 128,
+              "y": 82,
+              "width": 134,
+              "height": 4,
+              "fill": "#182A24",
+              "radius": 2,
+              "stroke": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "name": "Dashboard · Mac · Claro",
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 800,
+      "fill": "#F5F7F6",
+      "radius": 0,
+      "stroke": null,
+      "children": [
+        {
+          "type": "frame",
+          "name": "Barra lateral",
+          "x": 0,
+          "y": 0,
+          "width": 240,
+          "height": 800,
+          "fill": "#FFFFFF",
+          "radius": 0,
+          "stroke": "#DFE7E2",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Marca icono",
+              "x": 24,
+              "y": 32,
+              "width": 28,
+              "height": 28,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"28\" height=\"28\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#176B55\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 11 12 3l9 8M6 10v11h12V10M10 21v-7h4v7\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Marca",
+              "text": "Hogar Finanzas",
+              "x": 64,
+              "y": 35,
+              "width": 166,
+              "height": 28,
+              "size": 18,
+              "color": "#182A24",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Sección",
+              "text": "MI HOGAR",
+              "x": 24,
+              "y": 92,
+              "width": 190,
+              "height": 20,
+              "size": 10,
+              "color": "#697A72",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "frame",
+              "name": "Selección",
+              "x": 16,
+              "y": 127,
+              "width": 208,
+              "height": 44,
+              "fill": "#E7F2EC",
+              "radius": 12,
+              "stroke": null,
+              "children": []
+            },
+            {
+              "type": "icon",
+              "name": "Menú Resumen",
+              "x": 30,
+              "y": 137,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#176B55\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 20V10m8 10V4m8 16v-7\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Sección Resumen",
+              "text": "Resumen",
+              "x": 66,
+              "y": 138,
+              "width": 150,
+              "height": 26,
+              "size": 14,
+              "color": "#176B55",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "icon",
+              "name": "Menú Movimientos",
+              "x": 30,
+              "y": 191,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#697A72\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 3v18m-4-4 4 4 4-4m4 4V3m-4 4 4-4 4 4\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Sección Movimientos",
+              "text": "Movimientos",
+              "x": 66,
+              "y": 192,
+              "width": 150,
+              "height": 26,
+              "size": 14,
+              "color": "#697A72",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "icon",
+              "name": "Menú Cuentas",
+              "x": 30,
+              "y": 245,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#697A72\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"15\" rx=\"3\"/><path d=\"M3 9h18m-5 4h5v4h-5z\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Sección Cuentas",
+              "text": "Cuentas",
+              "x": 66,
+              "y": 246,
+              "width": 150,
+              "height": 26,
+              "size": 14,
+              "color": "#697A72",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "icon",
+              "name": "Menú Planificación",
+              "x": 30,
+              "y": 299,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#697A72\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"12\" cy=\"12\" r=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"1\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Sección Planificación",
+              "text": "Planificación",
+              "x": 66,
+              "y": 300,
+              "width": 150,
+              "height": 26,
+              "size": 14,
+              "color": "#697A72",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "icon",
+              "name": "Menú Hogar y copias",
+              "x": 30,
+              "y": 353,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#697A72\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 11 12 3l9 8M6 10v11h12V10M10 21v-7h4v7\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Sección Hogar y copias",
+              "text": "Hogar y copias",
+              "x": 66,
+              "y": 354,
+              "width": 150,
+              "height": 26,
+              "size": 14,
+              "color": "#697A72",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "frame",
+              "name": "Separador perfil",
+              "x": 24,
+              "y": 708,
+              "width": 192,
+              "height": 1,
+              "fill": "#DFE7E2",
+              "radius": 0,
+              "stroke": null,
+              "children": []
+            },
+            {
+              "type": "text",
+              "name": "Hogar activo",
+              "text": "Mi hogar",
+              "x": 28,
+              "y": 732,
+              "width": 180,
+              "height": 22,
+              "size": 14,
+              "color": "#182A24",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Perfil local",
+              "text": "Preferencias y miembros",
+              "x": 28,
+              "y": 758,
+              "width": 190,
+              "height": 20,
+              "size": 11,
+              "color": "#697A72",
+              "weight": "Regular",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "Título",
+          "text": "Resumen",
+          "x": 272,
+          "y": 44,
+          "width": 700,
+          "height": 52,
+          "size": 34,
+          "color": "#182A24",
+          "weight": "Bold",
+          "align": "LEFT"
+        },
+        {
+          "type": "icon",
+          "name": "Mes anterior",
+          "x": 274,
+          "y": 116,
+          "width": 20,
+          "height": 20,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#697A72\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m14 6-6 6 6 6\"/></g></svg>"
+        },
+        {
+          "type": "text",
+          "name": "Mes",
+          "text": "Noviembre de 2026",
+          "x": 308,
+          "y": 112,
+          "width": 232,
+          "height": 28,
+          "size": 16,
+          "color": "#182A24",
+          "weight": "Medium",
+          "align": "LEFT"
+        },
+        {
+          "type": "icon",
+          "name": "Mes siguiente",
+          "x": 542,
+          "y": 116,
+          "width": 20,
+          "height": 20,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#697A72\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 6 6 6-6 6\"/></g></svg>"
+        },
+        {
+          "type": "frame",
+          "name": "Saldo · tarjeta principal",
+          "x": 272,
+          "y": 166,
+          "width": 976,
+          "height": 196,
+          "fill": "#FFFFFF",
+          "radius": 24,
+          "stroke": "#DFE7E2",
+          "children": [
+            {
+              "type": "text",
+              "name": "Título saldo",
+              "text": "Saldo registrado total",
+              "x": 28,
+              "y": 24,
+              "width": 440,
+              "height": 24,
+              "size": 14,
+              "color": "#697A72",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Saldo",
+              "text": "2.500,00 €",
+              "x": 28,
+              "y": 63,
+              "width": 450,
+              "height": 64,
+              "size": 46,
+              "color": "#182A24",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Aclaración saldo",
+              "text": "Todos los movimientos registrados, sin conexión bancaria.",
+              "x": 28,
+              "y": 145,
+              "width": 460,
+              "height": 24,
+              "size": 12,
+              "color": "#697A72",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "frame",
+              "name": "Separador",
+              "x": 524,
+              "y": 32,
+              "width": 1,
+              "height": 132,
+              "fill": "#DFE7E2",
+              "radius": 0,
+              "stroke": null,
+              "children": []
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta reserva",
+              "text": "Reservado para metas",
+              "x": 558,
+              "y": 38,
+              "width": 360,
+              "height": 22,
+              "size": 13,
+              "color": "#697A72",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Reserva",
+              "text": "600,00 €",
+              "x": 558,
+              "y": 66,
+              "width": 360,
+              "height": 32,
+              "size": 25,
+              "color": "#182A24",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta sin reservar",
+              "text": "Saldo sin reservar",
+              "x": 558,
+              "y": 110,
+              "width": 360,
+              "height": 22,
+              "size": 13,
+              "color": "#697A72",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Sin reservar",
+              "text": "1.900,00 €",
+              "x": 558,
+              "y": 138,
+              "width": 360,
+              "height": 36,
+              "size": 25,
+              "color": "#176B55",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Mes · Ingresos del mes",
+          "x": 272,
+          "y": 386,
+          "width": 304,
+          "height": 128,
+          "fill": "#FFFFFF",
+          "radius": 18,
+          "stroke": "#DFE7E2",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Icono Ingresos del mes",
+              "x": 20,
+              "y": 20,
+              "width": 22,
+              "height": 22,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#176B55\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17 7 7 17m0-9v9h9\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta Ingresos del mes",
+              "text": "Ingresos del mes",
+              "x": 56,
+              "y": 20,
+              "width": 228,
+              "height": 24,
+              "size": 13,
+              "color": "#697A72",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe Ingresos del mes",
+              "text": "2.000,00 €",
+              "x": 20,
+              "y": 64,
+              "width": 264,
+              "height": 44,
+              "size": 30,
+              "color": "#176B55",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Mes · Gastos del mes",
+          "x": 608,
+          "y": 386,
+          "width": 304,
+          "height": 128,
+          "fill": "#FFFFFF",
+          "radius": 18,
+          "stroke": "#DFE7E2",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Icono Gastos del mes",
+              "x": 20,
+              "y": 20,
+              "width": 22,
+              "height": 22,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#9B4C39\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7m0 9V7H8\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta Gastos del mes",
+              "text": "Gastos del mes",
+              "x": 56,
+              "y": 20,
+              "width": 228,
+              "height": 24,
+              "size": 13,
+              "color": "#697A72",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe Gastos del mes",
+              "text": "500,00 €",
+              "x": 20,
+              "y": 64,
+              "width": 264,
+              "height": 44,
+              "size": 30,
+              "color": "#9B4C39",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Mes · Resultado del mes",
+          "x": 944,
+          "y": 386,
+          "width": 304,
+          "height": 128,
+          "fill": "#FFFFFF",
+          "radius": 18,
+          "stroke": "#DFE7E2",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Icono Resultado del mes",
+              "x": 20,
+              "y": 20,
+              "width": 22,
+              "height": 22,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#182A24\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 9h14M5 15h14\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta Resultado del mes",
+              "text": "Resultado del mes",
+              "x": 56,
+              "y": 20,
+              "width": 228,
+              "height": 24,
+              "size": 13,
+              "color": "#697A72",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe Resultado del mes",
+              "text": "1.500,00 €",
+              "x": 20,
+              "y": 64,
+              "width": 264,
+              "height": 44,
+              "size": 30,
+              "color": "#182A24",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "Aclaración reservas",
+          "text": "El saldo sin reservar no descuenta recibos ni compromisos futuros.",
+          "x": 272,
+          "y": 532,
+          "width": 976,
+          "height": 22,
+          "size": 12,
+          "color": "#697A72",
+          "weight": "Regular",
+          "align": "LEFT"
+        },
+        {
+          "type": "frame",
+          "name": "Acción · registrar",
+          "x": 272,
+          "y": 576,
+          "width": 268,
+          "height": 52,
+          "fill": "#176B55",
+          "radius": 14,
+          "stroke": null,
+          "children": [
+            {
+              "type": "icon",
+              "name": "Más",
+              "x": 26,
+              "y": 14,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 5v14M5 12h14\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Texto registrar",
+              "text": "Registrar gasto",
+              "x": 64,
+              "y": 15,
+              "width": 184,
+              "height": 26,
+              "size": 16,
+              "color": "#FFFFFF",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Acción · aviso",
+          "x": 556,
+          "y": 576,
+          "width": 290,
+          "height": 52,
+          "fill": "#FFFFFF",
+          "radius": 14,
+          "stroke": "#DFE7E2",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Escanear",
+              "x": 22,
+              "y": 14,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#176B55\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M7 9h10M7 13h7M7 17h4\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Texto aviso",
+              "text": "Desde aviso bancario",
+              "x": 60,
+              "y": 16,
+              "width": 212,
+              "height": 24,
+              "size": 15,
+              "color": "#182A24",
+              "weight": "Medium",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Detalle cerrado",
+          "x": 272,
+          "y": 664,
+          "width": 976,
+          "height": 68,
+          "fill": "#FFFFFF",
+          "radius": 16,
+          "stroke": "#DFE7E2",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Gráfico",
+              "x": 22,
+              "y": 22,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#697A72\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 20V10m8 10V4m8 16v-7\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Título detalle",
+              "text": "Detalle y evolución",
+              "x": 64,
+              "y": 16,
+              "width": 760,
+              "height": 25,
+              "size": 15,
+              "color": "#182A24",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Subtítulo detalle",
+              "text": "Cuentas · evolución mensual · categorías",
+              "x": 64,
+              "y": 42,
+              "width": 760,
+              "height": 18,
+              "size": 11,
+              "color": "#697A72",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "icon",
+              "name": "Abrir detalle",
+              "x": 932,
+              "y": 22,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#697A72\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 6 6 6-6 6\"/></g></svg>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "name": "Dashboard · iPhone · Oscuro",
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 844,
+      "fill": "#111A17",
+      "radius": 0,
+      "stroke": null,
+      "children": [
+        {
+          "type": "text",
+          "name": "Hora",
+          "text": "9:41",
+          "x": 26,
+          "y": 14,
+          "width": 70,
+          "height": 22,
+          "size": 14,
+          "color": "#F0F5F2",
+          "weight": "Semi Bold",
+          "align": "LEFT"
+        },
+        {
+          "type": "icon",
+          "name": "Cobertura",
+          "x": 286,
+          "y": 14,
+          "width": 18,
+          "height": 18,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#F0F5F2\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 20v-4m5 4V12m5 8V8m5 12V4\"/></g></svg>"
+        },
+        {
+          "type": "icon",
+          "name": "Wifi",
+          "x": 310,
+          "y": 14,
+          "width": 18,
+          "height": 18,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#F0F5F2\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 8a15 15 0 0 1 18 0M6 12a10 10 0 0 1 12 0m-9 4a5 5 0 0 1 6 0\"/><circle cx=\"12\" cy=\"20\" r=\".5\"/></g></svg>"
+        },
+        {
+          "type": "icon",
+          "name": "Batería",
+          "x": 334,
+          "y": 13,
+          "width": 21,
+          "height": 21,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"21\" height=\"21\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#F0F5F2\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"6\" width=\"17\" height=\"12\" rx=\"3\"/><path d=\"M22 10v4M6 10h9v4H6z\"/></g></svg>"
+        },
+        {
+          "type": "text",
+          "name": "Marca",
+          "text": "HOGAR FINANZAS",
+          "x": 22,
+          "y": 62,
+          "width": 260,
+          "height": 18,
+          "size": 10,
+          "color": "#A4B6AC",
+          "weight": "Semi Bold",
+          "align": "LEFT"
+        },
+        {
+          "type": "text",
+          "name": "Título",
+          "text": "Resumen",
+          "x": 22,
+          "y": 89,
+          "width": 280,
+          "height": 42,
+          "size": 30,
+          "color": "#F0F5F2",
+          "weight": "Bold",
+          "align": "LEFT"
+        },
+        {
+          "type": "frame",
+          "name": "Perfil",
+          "x": 330,
+          "y": 82,
+          "width": 40,
+          "height": 40,
+          "fill": "#253F32",
+          "radius": 20,
+          "stroke": null,
+          "children": [
+            {
+              "type": "text",
+              "name": "Iniciales",
+              "text": "HF",
+              "x": 0,
+              "y": 10,
+              "width": 40,
+              "height": 22,
+              "size": 13,
+              "color": "#92DDB8",
+              "weight": "Bold",
+              "align": "CENTER"
+            }
+          ]
+        },
+        {
+          "type": "icon",
+          "name": "Mes anterior",
+          "x": 20,
+          "y": 150,
+          "width": 20,
+          "height": 20,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#A4B6AC\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m14 6-6 6 6 6\"/></g></svg>"
+        },
+        {
+          "type": "text",
+          "name": "Mes",
+          "text": "Noviembre de 2026",
+          "x": 56,
+          "y": 146,
+          "width": 278,
+          "height": 28,
+          "size": 16,
+          "color": "#F0F5F2",
+          "weight": "Medium",
+          "align": "CENTER"
+        },
+        {
+          "type": "icon",
+          "name": "Mes siguiente",
+          "x": 350,
+          "y": 150,
+          "width": 20,
+          "height": 20,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#A4B6AC\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 6 6 6-6 6\"/></g></svg>"
+        },
+        {
+          "type": "frame",
+          "name": "Saldo · tarjeta principal",
+          "x": 20,
+          "y": 194,
+          "width": 350,
+          "height": 190,
+          "fill": "#1C2822",
+          "radius": 22,
+          "stroke": "#33453B",
+          "children": [
+            {
+              "type": "text",
+              "name": "Título del saldo",
+              "text": "Saldo registrado total",
+              "x": 20,
+              "y": 18,
+              "width": 310,
+              "height": 22,
+              "size": 13,
+              "color": "#A4B6AC",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Saldo",
+              "text": "2.500,00 €",
+              "x": 20,
+              "y": 46,
+              "width": 310,
+              "height": 48,
+              "size": 38,
+              "color": "#F0F5F2",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "frame",
+              "name": "Separador",
+              "x": 20,
+              "y": 104,
+              "width": 310,
+              "height": 1,
+              "fill": "#33453B",
+              "radius": 0,
+              "stroke": null,
+              "children": []
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta reserva",
+              "text": "Reservado",
+              "x": 20,
+              "y": 118,
+              "width": 145,
+              "height": 18,
+              "size": 11,
+              "color": "#A4B6AC",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe reserva",
+              "text": "600,00 €",
+              "x": 20,
+              "y": 139,
+              "width": 145,
+              "height": 26,
+              "size": 18,
+              "color": "#F0F5F2",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta sin reservar",
+              "text": "Sin reservar",
+              "x": 184,
+              "y": 118,
+              "width": 146,
+              "height": 18,
+              "size": 11,
+              "color": "#A4B6AC",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe sin reservar",
+              "text": "1.900,00 €",
+              "x": 184,
+              "y": 139,
+              "width": 146,
+              "height": 26,
+              "size": 18,
+              "color": "#92DDB8",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Aclaración",
+              "text": "Sin reservar no descuenta recibos futuros.",
+              "x": 20,
+              "y": 171,
+              "width": 310,
+              "height": 14,
+              "size": 10,
+              "color": "#A4B6AC",
+              "weight": "Regular",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Mes · Ingresos",
+          "x": 20,
+          "y": 402,
+          "width": 110,
+          "height": 104,
+          "fill": "#1C2822",
+          "radius": 16,
+          "stroke": "#33453B",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Icono Ingresos",
+              "x": 12,
+              "y": 12,
+              "width": 18,
+              "height": 18,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#92DDB8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17 7 7 17m0-9v9h9\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta Ingresos",
+              "text": "Ingresos",
+              "x": 12,
+              "y": 38,
+              "width": 86,
+              "height": 18,
+              "size": 11,
+              "color": "#A4B6AC",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe Ingresos",
+              "text": "2.000,00 €",
+              "x": 12,
+              "y": 61,
+              "width": 96,
+              "height": 25,
+              "size": 16,
+              "color": "#92DDB8",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Mes · Gastos",
+          "x": 140,
+          "y": 402,
+          "width": 110,
+          "height": 104,
+          "fill": "#1C2822",
+          "radius": 16,
+          "stroke": "#33453B",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Icono Gastos",
+              "x": 12,
+              "y": 12,
+              "width": 18,
+              "height": 18,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#E8AC98\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7m0 9V7H8\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta Gastos",
+              "text": "Gastos",
+              "x": 12,
+              "y": 38,
+              "width": 86,
+              "height": 18,
+              "size": 11,
+              "color": "#A4B6AC",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe Gastos",
+              "text": "500,00 €",
+              "x": 12,
+              "y": 61,
+              "width": 96,
+              "height": 25,
+              "size": 16,
+              "color": "#E8AC98",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Mes · Resultado",
+          "x": 260,
+          "y": 402,
+          "width": 110,
+          "height": 104,
+          "fill": "#1C2822",
+          "radius": 16,
+          "stroke": "#33453B",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Icono Resultado",
+              "x": 12,
+              "y": 12,
+              "width": 18,
+              "height": 18,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#F0F5F2\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 9h14M5 15h14\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta Resultado",
+              "text": "Resultado",
+              "x": 12,
+              "y": 38,
+              "width": 86,
+              "height": 18,
+              "size": 11,
+              "color": "#A4B6AC",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe Resultado",
+              "text": "1.500,00 €",
+              "x": 12,
+              "y": 61,
+              "width": 96,
+              "height": 25,
+              "size": 16,
+              "color": "#F0F5F2",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Acción · registrar gasto",
+          "x": 20,
+          "y": 530,
+          "width": 350,
+          "height": 54,
+          "fill": "#92DDB8",
+          "radius": 16,
+          "stroke": null,
+          "children": [
+            {
+              "type": "icon",
+              "name": "Más",
+              "x": 98,
+              "y": 15,
+              "width": 22,
+              "height": 22,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#11291D\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 5v14M5 12h14\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Texto registrar",
+              "text": "Registrar gasto",
+              "x": 130,
+              "y": 15,
+              "width": 200,
+              "height": 25,
+              "size": 16,
+              "color": "#11291D",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Acción · aviso bancario",
+          "x": 20,
+          "y": 596,
+          "width": 350,
+          "height": 46,
+          "fill": "#1C2822",
+          "radius": 14,
+          "stroke": "#33453B",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Escanear aviso",
+              "x": 82,
+              "y": 12,
+              "width": 22,
+              "height": 22,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#92DDB8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M7 9h10M7 13h7M7 17h4\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Texto aviso",
+              "text": "Desde aviso bancario",
+              "x": 114,
+              "y": 13,
+              "width": 220,
+              "height": 23,
+              "size": 14,
+              "color": "#F0F5F2",
+              "weight": "Medium",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Detalle cerrado",
+          "x": 20,
+          "y": 658,
+          "width": 350,
+          "height": 48,
+          "fill": "#1C2822",
+          "radius": 14,
+          "stroke": "#33453B",
+          "children": [
+            {
+              "type": "text",
+              "name": "Etiqueta detalle",
+              "text": "Detalle y evolución",
+              "x": 16,
+              "y": 14,
+              "width": 270,
+              "height": 22,
+              "size": 14,
+              "color": "#F0F5F2",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "icon",
+              "name": "Abrir detalle",
+              "x": 310,
+              "y": 14,
+              "width": 20,
+              "height": 20,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#A4B6AC\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 6 6 6-6 6\"/></g></svg>"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Navegación inferior · despejada",
+          "x": 0,
+          "y": 750,
+          "width": 390,
+          "height": 94,
+          "fill": "#1C2822",
+          "radius": 0,
+          "stroke": "#33453B",
+          "children": [
+            {
+              "type": "frame",
+              "name": "Selección Resumen",
+              "x": 16,
+              "y": 11,
+              "width": 46,
+              "height": 30,
+              "fill": "#253F32",
+              "radius": 12,
+              "stroke": null,
+              "children": []
+            },
+            {
+              "type": "icon",
+              "name": "Navegación · Resumen",
+              "x": 27,
+              "y": 14,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#92DDB8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 20V10m8 10V4m8 16v-7\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Pestaña Resumen",
+              "text": "Resumen",
+              "x": 0,
+              "y": 47,
+              "width": 78,
+              "height": 18,
+              "size": 10,
+              "color": "#92DDB8",
+              "weight": "Medium",
+              "align": "CENTER"
+            },
+            {
+              "type": "icon",
+              "name": "Navegación · Movimientos",
+              "x": 105,
+              "y": 14,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#A4B6AC\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 3v18m-4-4 4 4 4-4m4 4V3m-4 4 4-4 4 4\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Pestaña Movimientos",
+              "text": "Movimientos",
+              "x": 78,
+              "y": 47,
+              "width": 78,
+              "height": 18,
+              "size": 10,
+              "color": "#A4B6AC",
+              "weight": "Medium",
+              "align": "CENTER"
+            },
+            {
+              "type": "icon",
+              "name": "Navegación · Cuentas",
+              "x": 183,
+              "y": 14,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#A4B6AC\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"15\" rx=\"3\"/><path d=\"M3 9h18m-5 4h5v4h-5z\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Pestaña Cuentas",
+              "text": "Cuentas",
+              "x": 156,
+              "y": 47,
+              "width": 78,
+              "height": 18,
+              "size": 10,
+              "color": "#A4B6AC",
+              "weight": "Medium",
+              "align": "CENTER"
+            },
+            {
+              "type": "icon",
+              "name": "Navegación · Planes",
+              "x": 261,
+              "y": 14,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#A4B6AC\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"12\" cy=\"12\" r=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"1\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Pestaña Planes",
+              "text": "Planes",
+              "x": 234,
+              "y": 47,
+              "width": 78,
+              "height": 18,
+              "size": 10,
+              "color": "#A4B6AC",
+              "weight": "Medium",
+              "align": "CENTER"
+            },
+            {
+              "type": "icon",
+              "name": "Navegación · Hogar",
+              "x": 339,
+              "y": 14,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#A4B6AC\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 11 12 3l9 8M6 10v11h12V10M10 21v-7h4v7\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Pestaña Hogar",
+              "text": "Hogar",
+              "x": 312,
+              "y": 47,
+              "width": 78,
+              "height": 18,
+              "size": 10,
+              "color": "#A4B6AC",
+              "weight": "Medium",
+              "align": "CENTER"
+            },
+            {
+              "type": "frame",
+              "name": "Indicador de inicio",
+              "x": 128,
+              "y": 82,
+              "width": 134,
+              "height": 4,
+              "fill": "#F0F5F2",
+              "radius": 2,
+              "stroke": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "name": "Dashboard · Mac · Oscuro",
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 800,
+      "fill": "#111A17",
+      "radius": 0,
+      "stroke": null,
+      "children": [
+        {
+          "type": "frame",
+          "name": "Barra lateral",
+          "x": 0,
+          "y": 0,
+          "width": 240,
+          "height": 800,
+          "fill": "#1C2822",
+          "radius": 0,
+          "stroke": "#33453B",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Marca icono",
+              "x": 24,
+              "y": 32,
+              "width": 28,
+              "height": 28,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"28\" height=\"28\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#92DDB8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 11 12 3l9 8M6 10v11h12V10M10 21v-7h4v7\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Marca",
+              "text": "Hogar Finanzas",
+              "x": 64,
+              "y": 35,
+              "width": 166,
+              "height": 28,
+              "size": 18,
+              "color": "#F0F5F2",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Sección",
+              "text": "MI HOGAR",
+              "x": 24,
+              "y": 92,
+              "width": 190,
+              "height": 20,
+              "size": 10,
+              "color": "#A4B6AC",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "frame",
+              "name": "Selección",
+              "x": 16,
+              "y": 127,
+              "width": 208,
+              "height": 44,
+              "fill": "#253F32",
+              "radius": 12,
+              "stroke": null,
+              "children": []
+            },
+            {
+              "type": "icon",
+              "name": "Menú Resumen",
+              "x": 30,
+              "y": 137,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#92DDB8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 20V10m8 10V4m8 16v-7\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Sección Resumen",
+              "text": "Resumen",
+              "x": 66,
+              "y": 138,
+              "width": 150,
+              "height": 26,
+              "size": 14,
+              "color": "#92DDB8",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "icon",
+              "name": "Menú Movimientos",
+              "x": 30,
+              "y": 191,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#A4B6AC\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 3v18m-4-4 4 4 4-4m4 4V3m-4 4 4-4 4 4\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Sección Movimientos",
+              "text": "Movimientos",
+              "x": 66,
+              "y": 192,
+              "width": 150,
+              "height": 26,
+              "size": 14,
+              "color": "#A4B6AC",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "icon",
+              "name": "Menú Cuentas",
+              "x": 30,
+              "y": 245,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#A4B6AC\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"15\" rx=\"3\"/><path d=\"M3 9h18m-5 4h5v4h-5z\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Sección Cuentas",
+              "text": "Cuentas",
+              "x": 66,
+              "y": 246,
+              "width": 150,
+              "height": 26,
+              "size": 14,
+              "color": "#A4B6AC",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "icon",
+              "name": "Menú Planificación",
+              "x": 30,
+              "y": 299,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#A4B6AC\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"12\" cy=\"12\" r=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"1\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Sección Planificación",
+              "text": "Planificación",
+              "x": 66,
+              "y": 300,
+              "width": 150,
+              "height": 26,
+              "size": 14,
+              "color": "#A4B6AC",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "icon",
+              "name": "Menú Hogar y copias",
+              "x": 30,
+              "y": 353,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#A4B6AC\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 11 12 3l9 8M6 10v11h12V10M10 21v-7h4v7\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Sección Hogar y copias",
+              "text": "Hogar y copias",
+              "x": 66,
+              "y": 354,
+              "width": 150,
+              "height": 26,
+              "size": 14,
+              "color": "#A4B6AC",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "frame",
+              "name": "Separador perfil",
+              "x": 24,
+              "y": 708,
+              "width": 192,
+              "height": 1,
+              "fill": "#33453B",
+              "radius": 0,
+              "stroke": null,
+              "children": []
+            },
+            {
+              "type": "text",
+              "name": "Hogar activo",
+              "text": "Mi hogar",
+              "x": 28,
+              "y": 732,
+              "width": 180,
+              "height": 22,
+              "size": 14,
+              "color": "#F0F5F2",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Perfil local",
+              "text": "Preferencias y miembros",
+              "x": 28,
+              "y": 758,
+              "width": 190,
+              "height": 20,
+              "size": 11,
+              "color": "#A4B6AC",
+              "weight": "Regular",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "Título",
+          "text": "Resumen",
+          "x": 272,
+          "y": 44,
+          "width": 700,
+          "height": 52,
+          "size": 34,
+          "color": "#F0F5F2",
+          "weight": "Bold",
+          "align": "LEFT"
+        },
+        {
+          "type": "icon",
+          "name": "Mes anterior",
+          "x": 274,
+          "y": 116,
+          "width": 20,
+          "height": 20,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#A4B6AC\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m14 6-6 6 6 6\"/></g></svg>"
+        },
+        {
+          "type": "text",
+          "name": "Mes",
+          "text": "Noviembre de 2026",
+          "x": 308,
+          "y": 112,
+          "width": 232,
+          "height": 28,
+          "size": 16,
+          "color": "#F0F5F2",
+          "weight": "Medium",
+          "align": "LEFT"
+        },
+        {
+          "type": "icon",
+          "name": "Mes siguiente",
+          "x": 542,
+          "y": 116,
+          "width": 20,
+          "height": 20,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#A4B6AC\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 6 6 6-6 6\"/></g></svg>"
+        },
+        {
+          "type": "frame",
+          "name": "Saldo · tarjeta principal",
+          "x": 272,
+          "y": 166,
+          "width": 976,
+          "height": 196,
+          "fill": "#1C2822",
+          "radius": 24,
+          "stroke": "#33453B",
+          "children": [
+            {
+              "type": "text",
+              "name": "Título saldo",
+              "text": "Saldo registrado total",
+              "x": 28,
+              "y": 24,
+              "width": 440,
+              "height": 24,
+              "size": 14,
+              "color": "#A4B6AC",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Saldo",
+              "text": "2.500,00 €",
+              "x": 28,
+              "y": 63,
+              "width": 450,
+              "height": 64,
+              "size": 46,
+              "color": "#F0F5F2",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Aclaración saldo",
+              "text": "Todos los movimientos registrados, sin conexión bancaria.",
+              "x": 28,
+              "y": 145,
+              "width": 460,
+              "height": 24,
+              "size": 12,
+              "color": "#A4B6AC",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "frame",
+              "name": "Separador",
+              "x": 524,
+              "y": 32,
+              "width": 1,
+              "height": 132,
+              "fill": "#33453B",
+              "radius": 0,
+              "stroke": null,
+              "children": []
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta reserva",
+              "text": "Reservado para metas",
+              "x": 558,
+              "y": 38,
+              "width": 360,
+              "height": 22,
+              "size": 13,
+              "color": "#A4B6AC",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Reserva",
+              "text": "600,00 €",
+              "x": 558,
+              "y": 66,
+              "width": 360,
+              "height": 32,
+              "size": 25,
+              "color": "#F0F5F2",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta sin reservar",
+              "text": "Saldo sin reservar",
+              "x": 558,
+              "y": 110,
+              "width": 360,
+              "height": 22,
+              "size": 13,
+              "color": "#A4B6AC",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Sin reservar",
+              "text": "1.900,00 €",
+              "x": 558,
+              "y": 138,
+              "width": 360,
+              "height": 36,
+              "size": 25,
+              "color": "#92DDB8",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Mes · Ingresos del mes",
+          "x": 272,
+          "y": 386,
+          "width": 304,
+          "height": 128,
+          "fill": "#1C2822",
+          "radius": 18,
+          "stroke": "#33453B",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Icono Ingresos del mes",
+              "x": 20,
+              "y": 20,
+              "width": 22,
+              "height": 22,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#92DDB8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17 7 7 17m0-9v9h9\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta Ingresos del mes",
+              "text": "Ingresos del mes",
+              "x": 56,
+              "y": 20,
+              "width": 228,
+              "height": 24,
+              "size": 13,
+              "color": "#A4B6AC",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe Ingresos del mes",
+              "text": "2.000,00 €",
+              "x": 20,
+              "y": 64,
+              "width": 264,
+              "height": 44,
+              "size": 30,
+              "color": "#92DDB8",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Mes · Gastos del mes",
+          "x": 608,
+          "y": 386,
+          "width": 304,
+          "height": 128,
+          "fill": "#1C2822",
+          "radius": 18,
+          "stroke": "#33453B",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Icono Gastos del mes",
+              "x": 20,
+              "y": 20,
+              "width": 22,
+              "height": 22,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#E8AC98\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7m0 9V7H8\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta Gastos del mes",
+              "text": "Gastos del mes",
+              "x": 56,
+              "y": 20,
+              "width": 228,
+              "height": 24,
+              "size": 13,
+              "color": "#A4B6AC",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe Gastos del mes",
+              "text": "500,00 €",
+              "x": 20,
+              "y": 64,
+              "width": 264,
+              "height": 44,
+              "size": 30,
+              "color": "#E8AC98",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Mes · Resultado del mes",
+          "x": 944,
+          "y": 386,
+          "width": 304,
+          "height": 128,
+          "fill": "#1C2822",
+          "radius": 18,
+          "stroke": "#33453B",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Icono Resultado del mes",
+              "x": 20,
+              "y": 20,
+              "width": 22,
+              "height": 22,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#F0F5F2\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 9h14M5 15h14\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Etiqueta Resultado del mes",
+              "text": "Resultado del mes",
+              "x": 56,
+              "y": 20,
+              "width": 228,
+              "height": 24,
+              "size": 13,
+              "color": "#A4B6AC",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Importe Resultado del mes",
+              "text": "1.500,00 €",
+              "x": 20,
+              "y": 64,
+              "width": 264,
+              "height": 44,
+              "size": 30,
+              "color": "#F0F5F2",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "Aclaración reservas",
+          "text": "El saldo sin reservar no descuenta recibos ni compromisos futuros.",
+          "x": 272,
+          "y": 532,
+          "width": 976,
+          "height": 22,
+          "size": 12,
+          "color": "#A4B6AC",
+          "weight": "Regular",
+          "align": "LEFT"
+        },
+        {
+          "type": "frame",
+          "name": "Acción · registrar",
+          "x": 272,
+          "y": 576,
+          "width": 268,
+          "height": 52,
+          "fill": "#92DDB8",
+          "radius": 14,
+          "stroke": null,
+          "children": [
+            {
+              "type": "icon",
+              "name": "Más",
+              "x": 26,
+              "y": 14,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#11291D\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 5v14M5 12h14\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Texto registrar",
+              "text": "Registrar gasto",
+              "x": 64,
+              "y": 15,
+              "width": 184,
+              "height": 26,
+              "size": 16,
+              "color": "#11291D",
+              "weight": "Semi Bold",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Acción · aviso",
+          "x": 556,
+          "y": 576,
+          "width": 290,
+          "height": 52,
+          "fill": "#1C2822",
+          "radius": 14,
+          "stroke": "#33453B",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Escanear",
+              "x": 22,
+              "y": 14,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#92DDB8\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M7 9h10M7 13h7M7 17h4\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Texto aviso",
+              "text": "Desde aviso bancario",
+              "x": 60,
+              "y": 16,
+              "width": 212,
+              "height": 24,
+              "size": 15,
+              "color": "#F0F5F2",
+              "weight": "Medium",
+              "align": "LEFT"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "name": "Detalle cerrado",
+          "x": 272,
+          "y": 664,
+          "width": 976,
+          "height": 68,
+          "fill": "#1C2822",
+          "radius": 16,
+          "stroke": "#33453B",
+          "children": [
+            {
+              "type": "icon",
+              "name": "Gráfico",
+              "x": 22,
+              "y": 22,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#A4B6AC\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 20V10m8 10V4m8 16v-7\"/></g></svg>"
+            },
+            {
+              "type": "text",
+              "name": "Título detalle",
+              "text": "Detalle y evolución",
+              "x": 64,
+              "y": 16,
+              "width": 760,
+              "height": 25,
+              "size": 15,
+              "color": "#F0F5F2",
+              "weight": "Medium",
+              "align": "LEFT"
+            },
+            {
+              "type": "text",
+              "name": "Subtítulo detalle",
+              "text": "Cuentas · evolución mensual · categorías",
+              "x": 64,
+              "y": 42,
+              "width": 760,
+              "height": 18,
+              "size": 11,
+              "color": "#A4B6AC",
+              "weight": "Regular",
+              "align": "LEFT"
+            },
+            {
+              "type": "icon",
+              "name": "Abrir detalle",
+              "x": 932,
+              "y": 22,
+              "width": 24,
+              "height": 24,
+              "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"#A4B6AC\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 6 6 6-6 6\"/></g></svg>"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
