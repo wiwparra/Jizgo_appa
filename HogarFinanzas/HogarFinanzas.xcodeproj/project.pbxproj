@@ -1,0 +1,37 @@
+// !$*UTF8*$!
+{ archiveVersion = 1; classes = {}; objectVersion = 56; objects = {
+7AB8ED4F28C431FBF578351C = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsView.swift; sourceTree = "<group>"; };
+04B44584EE7066DC04984C3E = { isa = PBXBuildFile; fileRef = 7AB8ED4F28C431FBF578351C; };
+4597EDDCF324BB2FD6803E62 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+96BE23DACD273F8C5AED16B5 = { isa = PBXBuildFile; fileRef = 4597EDDCF324BB2FD6803E62; };
+E21F4CA5FB26A92F3A4C5ED9 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+39E7BA9FA1F3EA379F7589B3 = { isa = PBXBuildFile; fileRef = E21F4CA5FB26A92F3A4C5ED9; };
+62141CE849383715AFD74057 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesView.swift; sourceTree = "<group>"; };
+6AA3D8C40EC55E1E174E5DF8 = { isa = PBXBuildFile; fileRef = 62141CE849383715AFD74057; };
+1B5A6373EBD991B462857A01 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HogarFinanzasApp.swift; sourceTree = "<group>"; };
+BC220E1F34B525037F317EB4 = { isa = PBXBuildFile; fileRef = 1B5A6373EBD991B462857A01; };
+24F42F6D1A9FA472DC0A2C4A = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansView.swift; sourceTree = "<group>"; };
+287AEFE4B5EB1DBE30186352 = { isa = PBXBuildFile; fileRef = 24F42F6D1A9FA472DC0A2C4A; };
+32BBA3AE34E02F867C4F28EB = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+71CE9EE959F813903E82C91E = { isa = PBXBuildFile; fileRef = 32BBA3AE34E02F867C4F28EB; };
+6D7BE904512250F011F6D217 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+C67273574259E07AC6D2F2E5 = { isa = PBXBuildFile; fileRef = 6D7BE904512250F011F6D217; };
+E17E80AD8E2103CF3FC3FD96 = { isa = PBXGroup; path = App; sourceTree = "<group>"; children = (7AB8ED4F28C431FBF578351C,4597EDDCF324BB2FD6803E62,E21F4CA5FB26A92F3A4C5ED9,62141CE849383715AFD74057,1B5A6373EBD991B462857A01,24F42F6D1A9FA472DC0A2C4A,32BBA3AE34E02F867C4F28EB,6D7BE904512250F011F6D217); };
+A8792157CB4F27FB949C035F = { isa = PBXFileReference; explicitFileType = wrapper.application; path = HogarFinanzas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+0A3E27B8CA818264D75C8D81 = { isa = PBXGroup; name = Products; sourceTree = "<group>"; children = (A8792157CB4F27FB949C035F); };
+0D6E4079E36703EBD37C0072 = { isa = PBXGroup; sourceTree = "<group>"; children = (E17E80AD8E2103CF3FC3FD96,0A3E27B8CA818264D75C8D81); };
+E0CE1A7F3F76D7BFDA0FFDAE = { isa = XCLocalSwiftPackageReference; relativePath = "."; };
+8CE3E71EF8635D2BF27913BB = { isa = XCSwiftPackageProductDependency; package = E0CE1A7F3F76D7BFDA0FFDAE; productName = HogarCore; };
+B1B1BDB480C61D075300D9BF = { isa = PBXBuildFile; productRef = 8CE3E71EF8635D2BF27913BB; };
+05C78377BDB0B6342769023E = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (04B44584EE7066DC04984C3E,96BE23DACD273F8C5AED16B5,39E7BA9FA1F3EA379F7589B3,6AA3D8C40EC55E1E174E5DF8,BC220E1F34B525037F317EB4,287AEFE4B5EB1DBE30186352,71CE9EE959F813903E82C91E,C67273574259E07AC6D2F2E5); runOnlyForDeploymentPostprocessing = 0; };
+E2AA269EB967A8853A258BFA = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (B1B1BDB480C61D075300D9BF); runOnlyForDeploymentPostprocessing = 0; };
+41D311A605520FC7B8B9A980 = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+DFC1D21D28438E531F817435 = { isa = XCBuildConfiguration; name = Debug; buildSettings = { CLANG_ENABLE_MODULES = YES; SWIFT_VERSION = 5.0; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MACOSX_DEPLOYMENT_TARGET = 14.0; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG; DEBUG_INFORMATION_FORMAT = dwarf; }; };
+B00CCDD09424E369308D67FA = { isa = XCBuildConfiguration; name = Debug; buildSettings = { PRODUCT_NAME = "$(TARGET_NAME)"; PRODUCT_BUNDLE_IDENTIFIER = com.hogarfinanzas.app; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "Hogar Finanzas"; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance"; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; TARGETED_DEVICE_FAMILY = "1,2"; SUPPORTS_MACCATALYST = NO; CODE_SIGN_STYLE = Automatic; CODE_SIGN_ENTITLEMENTS = App/HogarFinanzas.entitlements; CURRENT_PROJECT_VERSION = 1; MARKETING_VERSION = 0.1.0; ENABLE_APP_SANDBOX = YES; ENABLE_USER_SELECTED_FILES = readwrite; SWIFT_EMIT_LOC_STRINGS = YES; }; };
+A1E97C491A309D8FE8E303CF = { isa = XCBuildConfiguration; name = Release; buildSettings = { CLANG_ENABLE_MODULES = YES; SWIFT_VERSION = 5.0; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MACOSX_DEPLOYMENT_TARGET = 14.0; SWIFT_COMPILATION_MODE = wholemodule; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; }; };
+1B104479E55E37CF8A63CBDF = { isa = XCBuildConfiguration; name = Release; buildSettings = { PRODUCT_NAME = "$(TARGET_NAME)"; PRODUCT_BUNDLE_IDENTIFIER = com.hogarfinanzas.app; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "Hogar Finanzas"; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance"; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; TARGETED_DEVICE_FAMILY = "1,2"; SUPPORTS_MACCATALYST = NO; CODE_SIGN_STYLE = Automatic; CODE_SIGN_ENTITLEMENTS = App/HogarFinanzas.entitlements; CURRENT_PROJECT_VERSION = 1; MARKETING_VERSION = 0.1.0; ENABLE_APP_SANDBOX = YES; ENABLE_USER_SELECTED_FILES = readwrite; SWIFT_EMIT_LOC_STRINGS = YES; }; };
+155B8673059CDC3C2EA12CA8 = { isa = XCConfigurationList; buildConfigurations = (DFC1D21D28438E531F817435,A1E97C491A309D8FE8E303CF); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+4C22169D0A9D428D8484661E = { isa = XCConfigurationList; buildConfigurations = (B00CCDD09424E369308D67FA,1B104479E55E37CF8A63CBDF); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+34A04005BCAF206EEC990BD9 = { isa = PBXNativeTarget; name = HogarFinanzas; productName = HogarFinanzas; productType = "com.apple.product-type.application"; productReference = A8792157CB4F27FB949C035F; buildConfigurationList = 4C22169D0A9D428D8484661E; buildPhases = (05C78377BDB0B6342769023E,E2AA269EB967A8853A258BFA,41D311A605520FC7B8B9A980); buildRules = (); dependencies = (); packageProductDependencies = (8CE3E71EF8635D2BF27913BB); };
+244210E48437B6556980A702 = { isa = PBXProject; attributes = { BuildIndependentTargetsInParallel = YES; LastUpgradeCheck = 1600; }; buildConfigurationList = 155B8673059CDC3C2EA12CA8; compatibilityVersion = "Xcode 14.0"; developmentRegion = es; knownRegions = (es,Base); mainGroup = 0D6E4079E36703EBD37C0072; productRefGroup = 0A3E27B8CA818264D75C8D81; projectDirPath = ""; projectRoot = ""; targets = (34A04005BCAF206EEC990BD9); packageReferences = (E0CE1A7F3F76D7BFDA0FFDAE); };
+}; rootObject = 244210E48437B6556980A702; }

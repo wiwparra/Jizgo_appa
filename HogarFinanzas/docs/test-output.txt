@@ -1,0 +1,109 @@
+[0/1] Planning build
+Building for debugging...
+[0/3] Write sources
+[1/3] Write swift-version-457096A79D733C59.txt
+[3/6] Compiling HogarCore Persistence.swift
+[4/6] Emitting module HogarCore
+[5/6] Compiling HogarCore Ledger.swift
+[7/8] Emitting module HogarCoreTests
+[8/11] Wrapping AST for HogarCore for debugging
+[9/11] Write Objects.LinkFileList
+[10/11] Linking HogarFinanzasPackageTests.xctest
+Build complete! (1.43s)
+Test Suite 'All tests' started at 2026-11-01 11:23:20.532
+Test Suite 'debug.xctest' started at 2026-11-01 11:23:20.533
+Test Suite 'FinanceTests' started at 2026-11-01 11:23:20.533
+Test Case 'FinanceTests.testAuthorAndAttributedMemberDiffer' started at 2026-11-01 11:23:20.533
+Test Case 'FinanceTests.testAuthorAndAttributedMemberDiffer' passed (0.003 seconds)
+Test Case 'FinanceTests.testBudgetHistoryAndOverspend' started at 2026-11-01 11:23:20.537
+Test Case 'FinanceTests.testBudgetHistoryAndOverspend' passed (0.004 seconds)
+Test Case 'FinanceTests.testChangingKindAndAccountRecalculates' started at 2026-11-01 11:23:20.541
+Test Case 'FinanceTests.testChangingKindAndAccountRecalculates' passed (0.0 seconds)
+Test Case 'FinanceTests.testEditDeleteRecalculate' started at 2026-11-01 11:23:20.541
+Test Case 'FinanceTests.testEditDeleteRecalculate' passed (0.0 seconds)
+Test Case 'FinanceTests.testExactMoney' started at 2026-11-01 11:23:20.542
+Test Case 'FinanceTests.testExactMoney' passed (0.001 seconds)
+Test Case 'FinanceTests.testFilters' started at 2026-11-01 11:23:20.543
+Test Case 'FinanceTests.testFilters' passed (0.001 seconds)
+Test Case 'FinanceTests.testGoalDeadlinesAndCeiling' started at 2026-11-01 11:23:20.543
+Test Case 'FinanceTests.testGoalDeadlinesAndCeiling' passed (0.002 seconds)
+Test Case 'FinanceTests.testGoalTargetLimit' started at 2026-11-01 11:23:20.545
+Test Case 'FinanceTests.testGoalTargetLimit' passed (0.0 seconds)
+Test Case 'FinanceTests.testInvalidTransferAndNegativeAmountAreAtomic' started at 2026-11-01 11:23:20.545
+Test Case 'FinanceTests.testInvalidTransferAndNegativeAmountAreAtomic' passed (0.0 seconds)
+Test Case 'FinanceTests.testLaterExpenseExposesUncoveredReserves' started at 2026-11-01 11:23:20.546
+Test Case 'FinanceTests.testLaterExpenseExposesUncoveredReserves' passed (0.0 seconds)
+Test Case 'FinanceTests.testMadridMonthBoundaryAndLeapYear' started at 2026-11-01 11:23:20.546
+Test Case 'FinanceTests.testMadridMonthBoundaryAndLeapYear' passed (0.001 seconds)
+Test Case 'FinanceTests.testMemberCanEditOwnAdminCanEditAll' started at 2026-11-01 11:23:20.547
+Test Case 'FinanceTests.testMemberCanEditOwnAdminCanEditAll' passed (0.0 seconds)
+Test Case 'FinanceTests.testMemberCannotManageConfiguration' started at 2026-11-01 11:23:20.547
+Test Case 'FinanceTests.testMemberCannotManageConfiguration' passed (0.0 seconds)
+Test Case 'FinanceTests.testMinimumFinancialScenario' started at 2026-11-01 11:23:20.548
+Test Case 'FinanceTests.testMinimumFinancialScenario' passed (0.0 seconds)
+Test Case 'FinanceTests.testOfflineConflictDoesNotOverwrite' started at 2026-11-01 11:23:20.548
+Test Case 'FinanceTests.testOfflineConflictDoesNotOverwrite' passed (0.1 seconds)
+Test Case 'FinanceTests.testOpeningIsNotIncome' started at 2026-11-01 11:23:20.649
+Test Case 'FinanceTests.testOpeningIsNotIncome' passed (0.0 seconds)
+Test Case 'FinanceTests.testRejectAmbiguousMoney' started at 2026-11-01 11:23:20.649
+Test Case 'FinanceTests.testRejectAmbiguousMoney' passed (0.0 seconds)
+Test Case 'FinanceTests.testReservationsCannotBeDuplicatedOrOverbooked' started at 2026-11-01 11:23:20.649
+Test Case 'FinanceTests.testReservationsCannotBeDuplicatedOrOverbooked' passed (0.0 seconds)
+Test Case 'FinanceTests.testRetryIsIdempotentAndDeleteIsTombstone' started at 2026-11-01 11:23:20.650
+Test Case 'FinanceTests.testRetryIsIdempotentAndDeleteIsTombstone' passed (0.0 seconds)
+Test Case 'FinanceTests.testRevocationAndLeaving' started at 2026-11-01 11:23:20.650
+Test Case 'FinanceTests.testRevocationAndLeaving' passed (0.0 seconds)
+Test Case 'FinanceTests.testRevokedActorCannotRetryAcknowledgedOperation' started at 2026-11-01 11:23:20.651
+Test Case 'FinanceTests.testRevokedActorCannotRetryAcknowledgedOperation' passed (0.0 seconds)
+Test Case 'FinanceTests.testUnconfiguredServiceFailsClosed' started at 2026-11-01 11:23:20.651
+Test Case 'FinanceTests.testUnconfiguredServiceFailsClosed' passed (0.0 seconds)
+Test Case 'FinanceTests.testYearBoundaryAndDST' started at 2026-11-01 11:23:20.651
+Test Case 'FinanceTests.testYearBoundaryAndDST' passed (0.001 seconds)
+Test Suite 'FinanceTests' passed at 2026-11-01 11:23:20.652
+	 Executed 23 tests, with 0 failures (0 unexpected) in 0.118 (0.118) seconds
+Test Suite 'LegacyImportTests' started at 2026-11-01 11:23:20.652
+Test Case 'LegacyImportTests.testEditingAndDeletingGoalReleasesWithoutExpense' started at 2026-11-01 11:23:20.652
+Test Case 'LegacyImportTests.testEditingAndDeletingGoalReleasesWithoutExpense' passed (0.002 seconds)
+Test Case 'LegacyImportTests.testExistingOverspendRemainsVisibleAfterImport' started at 2026-11-01 11:23:20.654
+Test Case 'LegacyImportTests.testExistingOverspendRemainsVisibleAfterImport' passed (0.001 seconds)
+Test Case 'LegacyImportTests.testFailedDiskSaveKeepsParentFile' started at 2026-11-01 11:23:20.654
+Test Case 'LegacyImportTests.testFailedDiskSaveKeepsParentFile' passed (0.001 seconds)
+Test Case 'LegacyImportTests.testGoalMonthlyFormulaMatchesPrototype' started at 2026-11-01 11:23:20.656
+Test Case 'LegacyImportTests.testGoalMonthlyFormulaMatchesPrototype' passed (0.1 seconds)
+Test Case 'LegacyImportTests.testImportRejectsCorruptAndInconsistentData' started at 2026-11-01 11:23:20.756
+Test Case 'LegacyImportTests.testImportRejectsCorruptAndInconsistentData' passed (0.001 seconds)
+Test Case 'LegacyImportTests.testImportedAuthorshipIsNotInventedOnEdit' started at 2026-11-01 11:23:20.758
+Test Case 'LegacyImportTests.testImportedAuthorshipIsNotInventedOnEdit' passed (0.001 seconds)
+Test Case 'LegacyImportTests.testPrototypeImportPreservesFinancialScenarioAndAttribution' started at 2026-11-01 11:23:20.758
+Test Case 'LegacyImportTests.testPrototypeImportPreservesFinancialScenarioAndAttribution' passed (0.002 seconds)
+Test Suite 'LegacyImportTests' passed at 2026-11-01 11:23:20.760
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.108 (0.108) seconds
+Test Suite 'PersistenceTests' started at 2026-11-01 11:23:20.760
+Test Case 'PersistenceTests.testBackupRoundTripAndConfirmation' started at 2026-11-01 11:23:20.760
+Test Case 'PersistenceTests.testBackupRoundTripAndConfirmation' passed (0.001 seconds)
+Test Case 'PersistenceTests.testCorruptReadCannotOverwriteOriginal' started at 2026-11-01 11:23:20.761
+Test Case 'PersistenceTests.testCorruptReadCannotOverwriteOriginal' passed (0.001 seconds)
+Test Case 'PersistenceTests.testDecodedMoneyAndReferencesAreValidated' started at 2026-11-01 11:23:20.762
+Test Case 'PersistenceTests.testDecodedMoneyAndReferencesAreValidated' passed (0.001 seconds)
+Test Case 'PersistenceTests.testExportRetainsTombstonesAndOperationIDs' started at 2026-11-01 11:23:20.763
+Test Case 'PersistenceTests.testExportRetainsTombstonesAndOperationIDs' passed (0.001 seconds)
+Test Case 'PersistenceTests.testInvalidRestorePreservesValidFile' started at 2026-11-01 11:23:20.763
+Test Case 'PersistenceTests.testInvalidRestorePreservesValidFile' passed (0.0 seconds)
+Test Case 'PersistenceTests.testInvalidSaveDoesNotReplaceFile' started at 2026-11-01 11:23:20.764
+Test Case 'PersistenceTests.testInvalidSaveDoesNotReplaceFile' passed (0.0 seconds)
+Test Case 'PersistenceTests.testLoadRequiredBeforeSave' started at 2026-11-01 11:23:20.764
+Test Case 'PersistenceTests.testLoadRequiredBeforeSave' passed (0.0 seconds)
+Test Case 'PersistenceTests.testMalformedBackupValidation' started at 2026-11-01 11:23:20.765
+Test Case 'PersistenceTests.testMalformedBackupValidation' passed (0.0 seconds)
+Test Case 'PersistenceTests.testPersistenceRoundTrip' started at 2026-11-01 11:23:20.765
+Test Case 'PersistenceTests.testPersistenceRoundTrip' passed (0.001 seconds)
+Test Suite 'PersistenceTests' passed at 2026-11-01 11:23:20.766
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.005 (0.005) seconds
+Test Suite 'debug.xctest' passed at 2026-11-01 11:23:20.766
+	 Executed 39 tests, with 0 failures (0 unexpected) in 0.231 (0.231) seconds
+Test Suite 'All tests' passed at 2026-11-01 11:23:20.766
+	 Executed 39 tests, with 0 failures (0 unexpected) in 0.231 (0.231) seconds
+◇ Test run started.
+↳ Testing Library Version: 6.2.1 (c9d57c83568b06d)
+↳ Target Platform: x86_64-unknown-linux-gnu
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.
