@@ -63,14 +63,14 @@ private struct BudgetEditor: View {
     @EnvironmentObject private var store: AppStore
     @Environment(\.dismiss) private var dismiss
     let month: Month
-    @State private var category: Category = .alimentacion
+    @State private var category: HogarCore.Category = .alimentacion
     @State private var amount = ""
     var body: some View {
         NavigationStack {
             Form {
                 InlineSaveError()
                 Text("Mes: \(month.label)")
-                Picker("Categoría", selection: $category) { ForEach(Category.allCases, id: \.self) { Text($0.rawValue).tag($0) } }
+                Picker("Categoría", selection: $category) { ForEach(HogarCore.Category.allCases, id: \.self) { Text($0.rawValue).tag($0) } }
                 TextField("Límite en euros", text: $amount)
                 Text("Guardar reemplaza el límite de esta categoría solo para este mes.").font(.caption)
             }.formStyle(.grouped).navigationTitle("Presupuesto")

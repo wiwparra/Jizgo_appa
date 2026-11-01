@@ -49,7 +49,7 @@ struct DashboardView: View {
                     }
                     GroupBox("Distribución del gasto del periodo") {
                         VStack {
-                            ForEach(Category.allCases, id: \.self) { category in
+                            ForEach(HogarCore.Category.allCases, id: \.self) { category in
                                 let spent = home.filtered(EntryFilter(month: Month(date), category: category)).filter { $0.kind == .expense }.reduce(Int64(0)) { $0 + $1.amount.cents }
                                 LabeledContent(category.rawValue, value: Money.format(spent))
                             }

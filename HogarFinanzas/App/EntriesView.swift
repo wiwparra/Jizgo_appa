@@ -6,7 +6,7 @@ struct EntriesView: View {
     @State private var date = Date()
     @State private var allMonths = false
     @State private var query = ""
-    @State private var category: Category?
+    @State private var category: HogarCore.Category?
     @State private var account: UUID?
     @State private var member: UUID?
     @State private var editor = false
@@ -18,8 +18,8 @@ struct EntriesView: View {
                 Toggle("Todos los meses", isOn: $allMonths)
                 if !allMonths { PeriodPicker(date: $date) }
                 Picker("Categoría", selection: $category) {
-                    Text("Todas").tag(nil as Category?)
-                    ForEach(Category.allCases, id: \.self) { Text($0.rawValue).tag(Optional($0)) }
+                    Text("Todas").tag(nil as HogarCore.Category?)
+                    ForEach(HogarCore.Category.allCases, id: \.self) { Text($0.rawValue).tag(Optional($0)) }
                 }
                 Picker("Cuenta", selection: $account) {
                     Text("Todas").tag(nil as UUID?)
@@ -71,7 +71,7 @@ struct EntryEditor: View {
     @State private var title = ""
     @State private var notes = ""
     @State private var date = Date()
-    @State private var category: Category = .alimentacion
+    @State private var category: HogarCore.Category = .alimentacion
     @State private var account: UUID?
     @State private var destination: UUID?
     @State private var member: UUID?
@@ -87,7 +87,7 @@ struct EntryEditor: View {
                 if kind == .transfer {
                     Picker("Cuenta de destino", selection: $destination) { Text("Selecciona").tag(nil as UUID?); ForEach((store.household?.accounts ?? []).filter { $0.id != account }) { Text($0.name).tag(Optional($0.id)) } }
                 } else {
-                    Picker("Categoría", selection: $category) { ForEach(Category.allCases, id: \.self) { Text($0.rawValue).tag($0) } }
+                    Picker("Categoría", selection: $category) { ForEach(HogarCore.Category.allCases, id: \.self) { Text($0.rawValue).tag($0) } }
                 }
                 Picker("Atribuido a", selection: $member) { ForEach((store.household?.members ?? []).filter(\.active)) { Text($0.name).tag(Optional($0.id)) } }
                 Text("El autor es la identidad local de este dispositivo. Atribuir un movimiento no cambia su autor.").font(.caption)
