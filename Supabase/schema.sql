@@ -122,7 +122,7 @@ begin
   if a-array['id','month','category','limit']<>'{}'::jsonb or (a->'month')-array['year','month']<>'{}'::jsonb or jsonb_typeof(a->'month'->'year') is distinct from 'number' or jsonb_typeof(a->'month'->'month') is distinct from 'number' or not coalesce((a->'month'->>'year')::int between 1900 and 9999,false) or not coalesce((a->'month'->>'month')::int between 1 and 12,false) or
    not coalesce(a->>'category' in ('Vivienda','Alimentación','Transporte','Salud','Educación','Ocio','Suscripciones','Otros'),false) or
    (a->'month'->>'year') !~ '^[0-9]+$' or (a->'month'->>'month') !~ '^[0-9]+$' then raise exception using errcode='PT422',message='invalid_budget'; end if;
- 
+
   perform hogar_private.money(a->'limit',true);
  end loop;
  for a in select value from jsonb_array_elements(d->'goals') loop
