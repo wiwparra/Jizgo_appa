@@ -5,9 +5,10 @@ public struct EntryFilter: Sendable {
     public var category: Category?
     public var account: UUID?
     public var member: UUID?
+    public var tag: String?
     public var query: String = ""
-    public init(month: Month? = nil, category: Category? = nil, account: UUID? = nil, member: UUID? = nil, query: String = "") {
-        self.month = month; self.category = category; self.account = account; self.member = member; self.query = query
+    public init(month: Month? = nil, category: Category? = nil, account: UUID? = nil, member: UUID? = nil, tag: String? = nil, query: String = "") {
+        self.month = month; self.category = category; self.account = account; self.member = member; self.tag = tag; self.query = query
     }
 }
 public struct Summary: Equatable, Sendable {
@@ -32,7 +33,8 @@ public extension Household {
             (filter.category == nil || entry.category == filter.category) &&
             (filter.account == nil || entry.accountID == filter.account || entry.destinationID == filter.account) &&
             (filter.member == nil || entry.memberID == filter.member) &&
-            (filter.query.isEmpty || (entry.title + " " + entry.notes).localizedCaseInsensitiveContains(filter.query))
+            (filter.tag == nil || EntryTags.key(filter.tag!).isEmpty || entry.tags.contains(where: { EntryTags.key($0) == EntryTags.key(filter.tag!) })) &&
+            (filter.query.isEmpty || (entry.title + " " + entry.notes + " " + entry.tags.joined(separator: " ")).localizedCaseInsensitiveContains(filter.query))
         }.sorted { $0.date > $1.date }
     }
     func balance(account id: UUID) -> Int64 {
@@ -70,7 +72,7 @@ public extension Household {
         }
         guard text(name), members.allSatisfy({ text($0.name) }), accounts.allSatisfy({ text($0.name) && money($0.opening) }),
               entries.allSatisfy({ entry in
-                  (entry.authorID == nil || memberIDs.contains(entry.authorID!)) && memberIDs.contains(entry.memberID) && accountIDs.contains(entry.accountID) && money(entry.amount, positive: true) && text(entry.title) && text(entry.notes, required: false) && validDate(entry.date) && (0...1_000_000).contains(entry.revision) &&
+                  (entry.authorID == nil || memberIDs.contains(entry.authorID!)) && memberIDs.contains(entry.memberID) && accountIDs.contains(entry.accountID) && money(entry.amount, positive: true) && text(entry.title) && text(entry.notes, required: false) && EntryTags.valid(entry.tags) && validDate(entry.date) && (0...1_000_000).contains(entry.revision) &&
                   (entry.kind == .transfer ? (entry.destinationID != entry.accountID && entry.destinationID.map { accountIDs.contains($0) } == true) : entry.destinationID == nil)
               }), budgets.allSatisfy({ (1900...9999).contains($0.month.year) && (1...12).contains($0.month.month) && money($0.limit, positive: true) }),
               goals.allSatisfy({ text($0.name) && validDate($0.due) && money($0.target, positive: true) && money($0.reserved) && $0.reserved.cents >= 0 && $0.reserved <= $0.target }) else { throw FinanceError.corrupt }
@@ -95,6 +97,7 @@ public enum Ledger {
     }
     public static func putEntry(_ entry: Entry, in household: inout Household, actor: UUID, expectedRevision: Int? = nil) throws {
         let principal = try household.authorized(actor)
+        guard EntryTags.valid(entry.tags) else { throw FinanceError.invalid("Revisa las etiquetas: máximo 10, distintas y de hasta 32 caracteres.") }
         guard entry.amount.cents > 0 else { throw FinanceError.invalid("El importe del movimiento debe ser positivo.") }
         guard !entry.title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { throw FinanceError.invalid("Escribe un concepto.") }
         if entry.kind == .transfer {

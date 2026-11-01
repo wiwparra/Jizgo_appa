@@ -21,6 +21,7 @@ struct DashboardView: View {
     @EnvironmentObject private var store: AppStore
     @State private var date = Date()
     @State private var add = false
+    @State private var bankImport = false
     var body: some View {
         ScrollView {
             if let home = store.household {
@@ -59,7 +60,11 @@ struct DashboardView: View {
                 }.padding(24)
             }
         }.navigationTitle("Resumen")
-        .toolbar { Button { add = true } label: { Label("Añadir gasto", systemImage: "plus") }.keyboardShortcut("n", modifiers: .command).disabled(store.household?.accounts.isEmpty != false) }
+        .toolbar {
+            Button { bankImport = true } label: { Label("Desde aviso bancario", systemImage: "text.viewfinder") }.disabled(store.household?.accounts.isEmpty != false)
+            Button { add = true } label: { Label("Añadir gasto", systemImage: "plus") }.keyboardShortcut("n", modifiers: .command).disabled(store.household?.accounts.isEmpty != false)
+        }
+        .sheet(isPresented: $bankImport) { BankNoticeView() }
         .sheet(isPresented: $add) { EntryEditor() }
     }
     private var months: [Month] {

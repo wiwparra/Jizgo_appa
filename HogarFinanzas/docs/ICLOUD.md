@@ -6,14 +6,17 @@ La aplicación actual es local. No usa un contenedor iCloud, no autentica cuenta
 
 El 1 de noviembre de 2026 se descargaron y leyeron el README y ViewModel del [ejemplo oficial de Apple CloudKit Sharing](https://github.com/apple/sample-cloudkit-sharing). El código confirma la creación de CKShare, el acceso diferenciado a bases privada y compartida, y la aceptación de invitaciones entre cuentas independientes. Requiere Mac/Xcode, cuentas iCloud y un contenedor de un equipo Apple Developer.
 
-Las páginas principales de documentación de Apple devolvieron un rechazo de la política de red (HTTP CONNECT 403):
+En la revisión posterior para avisos y familia se pudo consultar la documentación oficial de Apple:
 
-- https://developer.apple.com/documentation/coredata/sharing_core_data_objects_between_icloud_users
-- https://developer.apple.com/documentation/cloudkit/shared_records/sharing_cloudkit_data_with_other_icloud_users
+- [Sharing Core Data objects between iCloud users](https://developer.apple.com/documentation/coredata/sharing-core-data-objects-between-icloud-users), mediante su recurso JSON oficial.
+- [CKShare.ParticipantPermission](https://developer.apple.com/documentation/cloudkit/ckshare/participantpermission) y readWrite.
+- [Comparación de membresías](https://developer.apple.com/support/compare-memberships/).
 
-Se guardó la adición de `developer.apple.com` a la configuración de red para revisión. También se añadieron `swift.org` y `www.swift.org` al buscar las claves oficiales; finalmente se obtuvieron a través del repositorio oficial de Swift en GitHub y se comprobó la firma de la distribución. Guardar el borrador no aplica estos cambios al runtime.
+La ruta antigua con guiones bajos no era la URL vigente. La ruta con guiones responde correctamente con el acceso de red ya publicado. No se han cambiado de nuevo los ajustes del entorno.
 
-**La consulta de la documentación principal de Core Data sigue pendiente. No se afirma que se haya verificado ni se ha elegido definitivamente Core Data como implementación de colaboración.**
+El ejemplo de Core Data confirma dos almacenes (privado y compartido), invitaciones CKShare, aceptación, retirada de participantes y gestión de historial persistente. Advierte que la sincronización depende del sistema y no es en tiempo real. No se debe guardar un único JSON compartido con escrituras que sobrescriban todo el hogar.
+
+En las capturas del usuario se utiliza un Personal Team. El usuario confirmó que solo dispone de cuenta gratuita. CloudKit no se puede habilitar con ese equipo. No se ha contratado ninguna membresía ni servicio. Todos los familiares confirmaron usar iPhone/Mac con cuentas iCloud independientes; el grupo En familia de Apple por sí solo no comparte estos registros. La decisión pendiente es si se prepara una alternativa de autenticación y datos con un servicio externo de plan gratuito, configurado por el usuario. No existe todavía ese backend ni una integración familiar funcional.
 
 ## Evaluación de Core Data con CloudKit
 
@@ -44,7 +47,7 @@ Revocar acceso debe retirar permisos remotos y bloquear nuevas operaciones. No p
 ## Intervención necesaria para la siguiente fase Apple
 
 1. Usar un Mac con Xcode completo y ejecutar `Scripts/validate-apple.sh`. Corregir cualquier error de compilación que aparezca antes de afirmar compatibilidad.
-2. Revisar y guardar los dominios del borrador para completar la consulta de documentación oficial. La publicación del entorno es una acción posterior de la interfaz de configuración.
+2. Confirmar que existe un equipo Apple Developer apto para CloudKit. La documentación oficial ya pudo consultarse con la configuración publicada; no hace falta repetir ni publicar cambios de red para esta revisión.
 3. Tras cerrar la arquitectura de autorización, seleccionar en Xcode un equipo Apple Developer, un bundle ID propio y crear su contenedor iCloud. Los identificadores son configuración; certificados, sesiones y credenciales se gestionan en Apple/Xcode y nunca se pegan en el código ni en el chat.
 4. Implementar capacidades iCloud/CloudKit, notificaciones remotas, persistencia/sincronización e invitaciones con el contenedor real. El proyecto actual no solicita estas capacidades: habilitarlas sin el resto de código no proporcionaría colaboración.
 5. Usar dos cuentas Apple independientes y dispositivos de prueba: iPhone A crea → Mac B recibe; edición sin conexión y conflicto concurrente; reintento tras caída antes de ACK; revocación durante desconexión; salida del hogar; rechazo de modificación de autor ajeno; aislamiento de hogares; invitación rechazada/caducada; error iCloud y recuperación sin pérdida local.

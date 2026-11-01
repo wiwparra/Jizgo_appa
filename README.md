@@ -6,6 +6,8 @@ Proyecto nativo SwiftUI para iPhone (iOS 17+) y Mac (macOS 14+), con núcleo Swi
 
 Abre [HogarFinanzas.xcodeproj](HogarFinanzas/HogarFinanzas.xcodeproj) en Xcode 16 o posterior. Selecciona el esquema HogarFinanzas, My Mac o un simulador de iPhone y ejecuta. Para dispositivo físico selecciona tu equipo y un bundle identifier propio en Signing & Capabilities. No se incluyen certificados, claves ni conexión bancaria.
 
+Si ya instalaste una versión anterior, sigue [estos pasos de actualización](HogarFinanzas/docs/ACTUALIZAR.md) para conservar tu configuración y tus datos.
+
 Para probar el núcleo:
 
 ```sh
@@ -24,6 +26,8 @@ Ese último script **no se ha ejecutado aquí**: Linux no dispone de Xcode, SDK 
 
 Implementado:
 
+- Etiquetas personalizadas por movimiento, con búsqueda y filtro.
+- Propuestas desde texto o captura de un aviso bancario: reconocimiento local, revisión obligatoria, selección de cuenta y confirmación de posibles duplicados. [Uso y límites](HogarFinanzas/docs/AVISOS_BANCARIOS.md). iPhone no permite leer notificaciones de otras apps.
 - Cuentas manuales con saldo inicial; ingresos, gastos y transferencias; edición y eliminación confirmada; búsqueda por concepto/notas y filtros por mes, categoría, cuenta y miembro atribuido.
 - Resumen con saldo por cuenta y total, ingresos/gastos/resultado mensual, reservas y saldo sin reservar; evolución de seis meses y distribución del gasto. Se explican las cifras y la falta de cobertura de reservas.
 - Presupuestos por categoría y mes con historial independiente, consumo, restante y exceso.

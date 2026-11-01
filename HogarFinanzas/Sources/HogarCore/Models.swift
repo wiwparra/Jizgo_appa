@@ -103,10 +103,32 @@ public struct Entry: Codable, Identifiable, Equatable, Sendable {
     public var category: Category
     public var title: String
     public var notes: String
+    public var tags: [String]
     public var revision: Int
     public var deleted: Bool
-    public init(id: UUID = UUID(), authorID: UUID?, memberID: UUID, accountID: UUID, destinationID: UUID? = nil, kind: EntryKind, amount: Money, date: Date = Date(), category: Category = .otros, title: String, notes: String = "", revision: Int = 0, deleted: Bool = false) {
-        self.id = id; self.authorID = authorID; self.memberID = memberID; self.accountID = accountID; self.destinationID = destinationID; self.kind = kind; self.amount = amount; self.date = date; self.category = category; self.title = title; self.notes = notes; self.revision = revision; self.deleted = deleted
+    public init(id: UUID = UUID(), authorID: UUID?, memberID: UUID, accountID: UUID, destinationID: UUID? = nil, kind: EntryKind, amount: Money, date: Date = Date(), category: Category = .otros, title: String, notes: String = "", tags: [String] = [], revision: Int = 0, deleted: Bool = false) {
+        self.id = id; self.authorID = authorID; self.memberID = memberID; self.accountID = accountID; self.destinationID = destinationID; self.kind = kind; self.amount = amount; self.date = date; self.category = category; self.title = title; self.notes = notes; self.tags = tags; self.revision = revision; self.deleted = deleted
+    }
+    private enum CodingKeys: String, CodingKey {
+        case id, authorID, memberID, accountID, destinationID, kind, amount, date, category, title, notes, tags, revision, deleted
+    }
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        id = try values.decode(UUID.self, forKey: .id)
+        authorID = try values.decodeIfPresent(UUID.self, forKey: .authorID)
+        memberID = try values.decode(UUID.self, forKey: .memberID)
+        accountID = try values.decode(UUID.self, forKey: .accountID)
+        destinationID = try values.decodeIfPresent(UUID.self, forKey: .destinationID)
+        kind = try values.decode(EntryKind.self, forKey: .kind)
+        amount = try values.decode(Money.self, forKey: .amount)
+        date = try values.decode(Date.self, forKey: .date)
+        category = try values.decode(Category.self, forKey: .category)
+        title = try values.decode(String.self, forKey: .title)
+        notes = try values.decode(String.self, forKey: .notes)
+        // Las copias anteriores no tenían etiquetas; conservan todos sus datos.
+        tags = try values.decodeIfPresent([String].self, forKey: .tags) ?? []
+        revision = try values.decode(Int.self, forKey: .revision)
+        deleted = try values.decode(Bool.self, forKey: .deleted)
     }
 }
 public struct Budget: Codable, Identifiable, Equatable, Sendable {

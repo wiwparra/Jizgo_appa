@@ -21,6 +21,8 @@ struct SettingsView: View {
             }
             Section("Colaboración familiar · pendiente") {
                 Label("Acceso familiar no disponible", systemImage: "person.2.slash")
+                Text("El grupo En familia de Apple no comparte automáticamente este hogar. Cada participante necesita una invitación y su propia cuenta iCloud.")
+                Text("CloudKit necesita un equipo Apple Developer con esa capacidad; un Personal Team gratuito no basta. No actives capacidades de iCloud hasta completar la integración.").font(.caption)
                 Text("Esta entrega no envía invitaciones ni sincroniza dispositivos. Se necesita implementar una autoridad que autentique usuarios y aplique permisos por autor, además de validar dos cuentas iCloud independientes.")
                 Text("No basta con activar un contenedor iCloud. Consulta docs/ICLOUD.md antes de habilitar la colaboración.").font(.caption)
             }

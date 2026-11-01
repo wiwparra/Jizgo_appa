@@ -6,6 +6,8 @@ struct EntriesView: View {
     @State private var date = Date()
     @State private var allMonths = false
     @State private var query = ""
+    @State private var tag = ""
+    @State private var bankImport = false
     @State private var category: HogarCore.Category?
     @State private var account: UUID?
     @State private var member: UUID?
@@ -15,6 +17,7 @@ struct EntriesView: View {
     var body: some View {
         List {
             Section("Filtros") {
+                TextField("Etiqueta exacta (opcional)", text: $tag)
                 Toggle("Todos los meses", isOn: $allMonths)
                 if !allMonths { PeriodPicker(date: $date) }
                 Picker("Categoría", selection: $category) {
@@ -31,7 +34,7 @@ struct EntriesView: View {
                 }
             }
             Section("Movimientos") {
-                let entries = store.household?.filtered(EntryFilter(month: allMonths ? nil : Month(date), category: category, account: account, member: member, query: query)) ?? []
+                let entries = store.household?.filtered(EntryFilter(month: allMonths ? nil : Month(date), category: category, account: account, member: member, tag: tag, query: query)) ?? []
                 if entries.isEmpty { ContentUnavailableView("Sin movimientos", systemImage: "list.bullet.rectangle", description: Text("Añade un movimiento o cambia los filtros.")) }
                 ForEach(entries) { entry in
                     VStack(alignment: .leading, spacing: 8) {
@@ -43,6 +46,7 @@ struct EntriesView: View {
                         Text("\(entry.kind.rawValue) · \(entry.category.rawValue) · \(entry.date.formatted(date: .abbreviated, time: .omitted))").font(.caption).foregroundStyle(.secondary)
                         Text("Cuenta: \(store.household?.accounts.first { $0.id == entry.accountID }?.name ?? "—") · Miembro: \(store.household?.members.first { $0.id == entry.memberID }?.name ?? "—")").font(.caption)
                         Text(entry.authorID == nil ? "Autor histórico desconocido · importado del prototipo" : "Autor local: \(store.household?.members.first { $0.id == entry.authorID }?.name ?? "—")").font(.caption).foregroundStyle(.secondary)
+                        if !entry.tags.isEmpty { Text("Etiquetas: " + entry.tags.joined(separator: ", ")).font(.caption).foregroundStyle(.secondary) }
                         HStack {
                             Button("Editar") { editing = entry }
                             Button("Eliminar", role: .destructive) { deleting = entry }
@@ -50,8 +54,12 @@ struct EntriesView: View {
                     }.padding(.vertical, 6)
                 }
             }
-        }.navigationTitle("Movimientos").searchable(text: $query, prompt: "Concepto o notas")
-        .toolbar { Button { editing = nil; editor = true } label: { Label("Añadir", systemImage: "plus") }.disabled(store.household?.accounts.isEmpty != false) }
+        }.navigationTitle("Movimientos").searchable(text: $query, prompt: "Concepto, notas o etiquetas")
+        .toolbar {
+            Button { bankImport = true } label: { Label("Desde aviso bancario", systemImage: "text.viewfinder") }.disabled(store.household?.accounts.isEmpty != false)
+            Button { editing = nil; editor = true } label: { Label("Añadir", systemImage: "plus") }.disabled(store.household?.accounts.isEmpty != false)
+        }
+        .sheet(isPresented: $bankImport) { BankNoticeView() }
         .sheet(isPresented: $editor) { EntryEditor() }
         .sheet(item: $editing) { EntryEditor(entry: $0) }
         .confirmationDialog("¿Eliminar este movimiento? Se recalcularán los saldos.", isPresented: Binding(get: { deleting != nil }, set: { if !$0 { deleting = nil } }), titleVisibility: .visible) {
@@ -70,6 +78,7 @@ struct EntryEditor: View {
     @State private var amount = ""
     @State private var title = ""
     @State private var notes = ""
+    @State private var tagInput = ""
     @State private var date = Date()
     @State private var category: HogarCore.Category = .alimentacion
     @State private var account: UUID?
@@ -91,6 +100,8 @@ struct EntryEditor: View {
                 }
                 Picker("Atribuido a", selection: $member) { ForEach((store.household?.members ?? []).filter(\.active)) { Text($0.name).tag(Optional($0.id)) } }
                 Text("El autor es la identidad local de este dispositivo. Atribuir un movimiento no cambia su autor.").font(.caption)
+                TextField("Etiquetas separadas por comas", text: $tagInput)
+                Text("Ejemplo: compra semanal, vacaciones, colegio. Las etiquetas son independientes de la categoría.").font(.caption).foregroundStyle(.secondary)
                 TextField("Notas", text: $notes, axis: .vertical)
             }.formStyle(.grouped).navigationTitle(entry == nil ? "Nuevo movimiento" : "Editar movimiento")
             .toolbar {
@@ -99,14 +110,14 @@ struct EntryEditor: View {
             }
         }.frame(minWidth: 300, minHeight: 500)
         .onAppear {
-            if let entry { kind = entry.kind; amount = entry.amount.input; title = entry.title; notes = entry.notes; date = entry.date; category = entry.category; account = entry.accountID; destination = entry.destinationID; member = entry.memberID }
+            if let entry { kind = entry.kind; amount = entry.amount.input; title = entry.title; notes = entry.notes; tagInput = entry.tags.joined(separator: ", "); date = entry.date; category = entry.category; account = entry.accountID; destination = entry.destinationID; member = entry.memberID }
             else { account = store.household?.accounts.first?.id; member = store.actor }
         }
     }
     private func save() {
         guard let account, let member else { return }
         if store.update({ home, actor in
-            let value = Entry(id: entry?.id ?? UUID(), authorID: entry == nil ? actor : entry!.authorID, memberID: member, accountID: account, destinationID: kind == .transfer ? destination : nil, kind: kind, amount: try Money(amount), date: date, category: category, title: title, notes: notes, revision: entry?.revision ?? 0)
+            let value = Entry(id: entry?.id ?? UUID(), authorID: entry == nil ? actor : entry!.authorID, memberID: member, accountID: account, destinationID: kind == .transfer ? destination : nil, kind: kind, amount: try Money(amount), date: date, category: category, title: title, notes: notes, tags: try EntryTags.parse(tagInput), revision: entry?.revision ?? 0)
             try Ledger.putEntry(value, in: &home, actor: actor, expectedRevision: entry?.revision)
         }) { dismiss() }
     }

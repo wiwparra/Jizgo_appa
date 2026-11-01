@@ -5,13 +5,13 @@ Entorno observado: Debian 13 x86_64, Swift 6.2.1 (distribución oficial Ubuntu 2
 ## Ejecutado
 
 - Compilación de `HogarCore` con Swift Package Manager: aprobada.
-- `./Scripts/test.sh`: **39 pruebas XCTest, 0 fallos** (23 financieras/permisos/reductor, 9 de persistencia y 7 de importación/metas/errores). La salida completa de esta ejecución está en `docs/test-output.txt`.
+- `./Scripts/test.sh`: **58 pruebas XCTest, 0 fallos** (las 39 anteriores, 14 de avisos bancarios y 5 de etiquetas). La salida completa de esta ejecución está en `docs/test-output.txt`.
 - Seis pruebas originales puras del prototipo: **6 aprobadas**, cuerpos sin cambios, con `Finance.swift` original dentro de un paquete temporal. No se compilaron sus clases SwiftUI. Son evidencia del prototipo, no 6 pruebas adicionales del nuevo paquete.
-- Análisis sintáctico de las ocho fuentes SwiftUI con `swiftc -frontend -parse`: aprobado. Esto no resuelve tipos/importaciones Apple ni prueba la interfaz.
-- Parseo OpenStep del archivo `project.pbxproj` con Foundation, verificación de los ocho archivos fuente referenciados y XML del esquema/entitlements: aprobado. No equivale a abrir el proyecto en Xcode.
+- Análisis sintáctico de las nueve fuentes SwiftUI con `swiftc -frontend -parse`: aprobado. Esto no resuelve tipos/importaciones Apple ni prueba la interfaz.
+- Parseo OpenStep del archivo `project.pbxproj` con Foundation, verificación de los nueve archivos fuente referenciados y XML del esquema/entitlements: aprobado. No equivale a abrir el proyecto en Xcode.
 - Script de instalación del entorno: ejecutado con firma y dependencias almacenadas; comprobada la repetibilidad sin modificar código ni lockfiles.
 
-El pie de Swift Testing informa «0 tests» porque el proyecto usa XCTest. Los 39 casos ejecutados aparecen en la suite XCTest y en la salida conservada; no se cuenta el runner vacío de Swift Testing como validación.
+El pie de Swift Testing informa «0 tests» porque el proyecto usa XCTest. Los 58 casos ejecutados aparecen en la suite XCTest y en la salida conservada; no se cuenta el runner vacío de Swift Testing como validación.
 
 Casos cubiertos: precisión/validación, saldo inicial, transferencias neutras, saldo por cuenta, edición y tombstones, periodos Madrid con cambio de año/DST y febrero bisiesto, filtros, reservas/límites/liberación/sobregasto/vencimientos, historial presupuestario, permisos de mutación por autor y administrador, salida/revocación lógica local, conflictos/reintentos del reductor, servicio no configurado, persistencia/permisos de archivo, copias/confirmación/archivos corruptos, referencias inválidas, importación del esquema antiguo y autoría desconocida.
 
@@ -35,3 +35,9 @@ Casos cubiertos: precisión/validación, saldo inicial, transferencias neutras, 
 8. Exportar, cambiar datos, seleccionar copia, cancelar restauración y comprobar que nada cambia; repetir confirmando. Probar JSON corrupto y versión no soportada. No usar archivos financieros reales para estas pruebas.
 9. Importar una copia 0.1 y verificar las advertencias, la cuenta conjunta, los nombres atribuidos y los autores desconocidos.
 10. Activar demostración, modificarla y volver al modo real: comprobar separación. Repetir con VoiceOver, texto grande, contraste oscuro y teclado.
+
+## Incremento de avisos y etiquetas
+
+Se ejecutaron 19 pruebas nuevas: importes españoles, agrupación, decimal con punto, moneda explícita, dirección ambigua, transferencias, varias cantidades, saldos, moneda extranjera, códigos de seguridad, pagos rechazados/pendientes, límites de entrada, confirmación sin mutación previa, reintento idempotente, posible duplicado con confirmación separada, tombstone y permisos; etiquetas, búsqueda, copia antigua sin campo tags y conservación de saldos. No se guarda el texto del aviso en la copia financiera.
+
+El OCR de Vision, la selección de fotos, la presentación de la hoja y la compilación nativa siguen pendientes de Apple. Se validaron la sintaxis de las nueve fuentes y las referencias del proyecto, no su ejecución. No se añadieron capacidades de iCloud ni App Groups al proyecto local. La colaboración continúa deshabilitada; se consultó ahora la documentación oficial de Core Data/CloudKit con éxito (ICLOUD.md).
