@@ -22,7 +22,7 @@ struct PlansView: View {
                         }.padding(.vertical, 5)
                     }
                 }
-                Button("Establecer límite de este mes") { budgetEditor = true }
+                Button("Establecer límite de este mes") { budgetEditor = true }.disabled(!store.canManageHousehold)
                 Text("Cada mes conserva su propio presupuesto. Cambiar un mes no modifica los anteriores.").font(.caption).foregroundStyle(.secondary)
             }
             Section("Metas de ahorro") {
@@ -38,13 +38,13 @@ struct PlansView: View {
                             Button("Reservar o liberar") { selectedGoal = goal }
                             Button("Editar") { editingGoal = goal }
                             Button("Eliminar", role: .destructive) { deletingGoal = goal }
-                        }.buttonStyle(.borderless)
+                        }.buttonStyle(.borderless).disabled(!store.canManageHousehold)
                     }.padding(.vertical, 8)
                 }
                 if let summary = store.household?.summary(month: Month(Date())), summary.uncovered > 0 {
                     Label("Faltan \(Money.format(summary.uncovered)) para cubrir las reservas. No se han ocultado los gastos.", systemImage: "exclamationmark.triangle.fill").foregroundStyle(.orange)
                 }
-                Button("Nueva meta") { goalEditor = true }
+                Button("Nueva meta") { goalEditor = true }.disabled(!store.canManageHousehold)
             }
         }.navigationTitle("Planificación")
         .sheet(isPresented: $budgetEditor) { BudgetEditor(month: Month(date)) }

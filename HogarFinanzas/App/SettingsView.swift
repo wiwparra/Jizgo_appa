@@ -13,18 +13,16 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section("Hogar") {
+                Label(store.demo ? "Demostración · datos separados" : store.syncStatus.label, systemImage: store.demo ? "testtube.2" : "internaldrive")
                 Text(store.household?.name ?? "Sin hogar cargado").font(.headline)
                 ForEach(store.household?.members ?? []) { member in
-                    LabeledContent(member.name, value: member.role == .admin ? "Administrador local" : "Miembro")
+                    LabeledContent(member.name, value: member.role == .admin ? (store.familyEnabled ? "Administrador" : "Administrador local") : "Miembro")
                 }
-                Text("La identidad local no es una autenticación iCloud. No hay selector para acceder como otra persona.").font(.caption).foregroundStyle(.secondary)
+                Text(store.familyEnabled ? "La identidad la proporciona tu sesión autenticada; atribuir un movimiento a otra persona no cambia su autor." : "Esta identidad es local. Para compartir, configura el acceso familiar con cuentas independientes.").font(.caption).foregroundStyle(.secondary)
             }
-            Section("Colaboración familiar · pendiente") {
-                Label("Acceso familiar no disponible", systemImage: "person.2.slash")
-                Text("El grupo En familia de Apple no comparte automáticamente este hogar. Cada participante necesita una invitación y su propia cuenta iCloud.")
-                Text("CloudKit necesita un equipo Apple Developer con esa capacidad; un Personal Team gratuito no basta. No actives capacidades de iCloud hasta completar la integración.").font(.caption)
-                Text("Esta entrega no envía invitaciones ni sincroniza dispositivos. Se necesita implementar una autoridad que autentique usuarios y aplique permisos por autor, además de validar dos cuentas iCloud independientes.")
-                Text("No basta con activar un contenedor iCloud. Consulta docs/ICLOUD.md antes de habilitar la colaboración.").font(.caption)
+            Section("Acceso familiar") {
+                NavigationLink("Configurar o gestionar mi hogar familiar") { FamilySettingsView() }
+                Text(store.familyEnabled ? "Usas el hogar compartido con tu cuenta personal. Los datos locales se conservan por separado." : "Puedes usar cuentas independientes mediante Supabase. No requiere capacidades iCloud ni Apple Developer de pago.").font(.caption).foregroundStyle(.secondary)
             }
             Section("Copias de seguridad") {
                 Text("También puedes importar copias del prototipo 0.1. Las copias JSON contienen los datos financieros en claro. Guárdalas en una ubicación protegida. Restaurar reemplaza por completo el hogar de este modo.").font(.callout)

@@ -17,7 +17,11 @@ public enum EntryTags {
         return labels
     }
     public static func key(_ label: String) -> String {
-        label.trimmingCharacters(in: .whitespacesAndNewlines).folding(options: [.caseInsensitive, .diacriticInsensitive], locale: Locale(identifier: "es_ES"))
+        // Regla determinista compartida con PostgreSQL: NFD, diacríticos latinos y A–Z.
+        let scalars = label.trimmingCharacters(in: .whitespacesAndNewlines).decomposedStringWithCanonicalMapping.unicodeScalars
+            .filter { !(0x0300...0x036f).contains($0.value) }
+            .map { scalar in (0x41...0x5a).contains(scalar.value) ? UnicodeScalar(scalar.value + 32)! : scalar }
+        return String(String.UnicodeScalarView(scalars))
     }
     public static func valid(_ tags: [String]) -> Bool {
         guard tags.count <= 10 else { return false }

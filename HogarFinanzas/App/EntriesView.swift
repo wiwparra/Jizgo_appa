@@ -45,12 +45,14 @@ struct EntriesView: View {
                         }
                         Text("\(entry.kind.rawValue) · \(entry.category.rawValue) · \(entry.date.formatted(date: .abbreviated, time: .omitted))").font(.caption).foregroundStyle(.secondary)
                         Text("Cuenta: \(store.household?.accounts.first { $0.id == entry.accountID }?.name ?? "—") · Miembro: \(store.household?.members.first { $0.id == entry.memberID }?.name ?? "—")").font(.caption)
-                        Text(entry.authorID == nil ? "Autor histórico desconocido · importado del prototipo" : "Autor local: \(store.household?.members.first { $0.id == entry.authorID }?.name ?? "—")").font(.caption).foregroundStyle(.secondary)
+                        Text(entry.authorID == nil ? "Autor histórico sin verificar" : "Autor: \(store.household?.members.first { $0.id == entry.authorID }?.name ?? "—")").font(.caption).foregroundStyle(.secondary)
                         if !entry.tags.isEmpty { Text("Etiquetas: " + entry.tags.joined(separator: ", ")).font(.caption).foregroundStyle(.secondary) }
-                        HStack {
-                            Button("Editar") { editing = entry }
-                            Button("Eliminar", role: .destructive) { deleting = entry }
-                        }.buttonStyle(.borderless)
+                        if store.canEdit(entry) {
+                            HStack {
+                                Button("Editar") { editing = entry }
+                                Button("Eliminar", role: .destructive) { deleting = entry }
+                            }.buttonStyle(.borderless)
+                        }
                     }.padding(.vertical, 6)
                 }
             }
@@ -98,8 +100,8 @@ struct EntryEditor: View {
                 } else {
                     Picker("Categoría", selection: $category) { ForEach(HogarCore.Category.allCases, id: \.self) { Text($0.rawValue).tag($0) } }
                 }
-                Picker("Atribuido a", selection: $member) { ForEach((store.household?.members ?? []).filter(\.active)) { Text($0.name).tag(Optional($0.id)) } }
-                Text("El autor es la identidad local de este dispositivo. Atribuir un movimiento no cambia su autor.").font(.caption)
+                Picker("Atribuido a", selection: $member) { ForEach((store.household?.members ?? []).filter { $0.active || $0.id == entry?.memberID }) { Text($0.name).tag(Optional($0.id)) } }
+                Text(store.familyEnabled ? "El autor es tu cuenta autenticada. Atribuir un movimiento no cambia quién lo registró." : "El autor es la identidad local de este dispositivo. Atribuir un movimiento no cambia su autor.").font(.caption)
                 TextField("Etiquetas separadas por comas", text: $tagInput)
                 Text("Ejemplo: compra semanal, vacaciones, colegio. Las etiquetas son independientes de la categoría.").font(.caption).foregroundStyle(.secondary)
                 TextField("Notas", text: $notes, axis: .vertical)

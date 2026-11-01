@@ -47,6 +47,22 @@ public final class LocalRepository {
     public func save(_ household: Household) throws {
         guard writable else { throw FinanceError.invalid("Almacenamiento bloqueado: resuelve el error de lectura antes de guardar.") }
         let data = try Backup(household: household).encoded()
+        try ProtectedFile.write(data, to: url)
+    }
+    public func restore(_ data: Data, confirmed: Bool) throws -> Household {
+        guard confirmed else { throw FinanceError.confirmationRequired }
+        let household = try Backup.decode(data)
+        // Una copia válida y confirmada es la única recuperación que desbloquea un archivo ilegible.
+        let oldWritable = writable
+        writable = true
+        do { try save(household); return household }
+        catch { writable = oldWritable; throw error }
+    }
+}
+
+// Compartido por el hogar local y la cola familiar: permisos antes de publicar el archivo por rename atómico.
+public enum ProtectedFile {
+    public static func write(_ data: Data, to url: URL) throws {
         try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: [.posixPermissions: 0o700])
         let temporary = url.deletingLastPathComponent().appendingPathComponent(".hogar-\(UUID().uuidString).tmp")
         guard FileManager.default.createFile(atPath: temporary.path, contents: nil, attributes: [.posixPermissions: 0o600]) else { throw CocoaError(.fileWriteUnknown) }
@@ -61,14 +77,5 @@ public final class LocalRepository {
             url.withUnsafeFileSystemRepresentation { destination in rename(source!, destination!) }
         }
         guard result == 0 else { throw POSIXError(POSIXErrorCode(rawValue: errno) ?? .EIO) }
-    }
-    public func restore(_ data: Data, confirmed: Bool) throws -> Household {
-        guard confirmed else { throw FinanceError.confirmationRequired }
-        let household = try Backup.decode(data)
-        // Una copia válida y confirmada es la única recuperación que desbloquea un archivo ilegible.
-        let oldWritable = writable
-        writable = true
-        do { try save(household); return household }
-        catch { writable = oldWritable; throw error }
     }
 }

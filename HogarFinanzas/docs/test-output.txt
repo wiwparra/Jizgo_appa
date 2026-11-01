@@ -1,154 +1,211 @@
 [0/1] Planning build
 Building for debugging...
-[0/3] Write sources
-[1/3] Write swift-version-457096A79D733C59.txt
-[3/5] Compiling HogarCoreTests BankNoticeTests.swift
-[4/5] Emitting module HogarCoreTests
-[5/11] /workspace/Jizgo_appa/HogarFinanzas/.build/x86_64-unknown-linux-gnu/debug/HogarFinanzasPackageDiscoveredTests.derived/all-discovered-tests.swift
-[6/12] Write sources
-[8/15] Emitting module HogarFinanzasPackageDiscoveredTests
-[9/15] Compiling HogarFinanzasPackageDiscoveredTests all-discovered-tests.swift
-[10/15] Compiling HogarFinanzasPackageDiscoveredTests HogarCoreTests.swift
-[11/13] Write Objects.LinkFileList
-[12/13] Linking HogarFinanzasPackageTests.xctest
-Build complete! (1.66s)
-Test Suite 'All tests' started at 2026-11-01 14:11:17.537
-Test Suite 'debug.xctest' started at 2026-11-01 14:11:17.541
-Test Suite 'BankNoticeTests' started at 2026-11-01 14:11:17.541
-Test Case 'BankNoticeTests.testBalanceAndForeignCurrencyAreNotGuessedAsCharge' started at 2026-11-01 14:11:17.541
-Test Case 'BankNoticeTests.testBalanceAndForeignCurrencyAreNotGuessedAsCharge' passed (0.011 seconds)
-Test Case 'BankNoticeTests.testBankRegistrationRetainsAuthorPermissions' started at 2026-11-01 14:11:17.552
+[0/4] Write sources
+[2/4] Write swift-version-457096A79D733C59.txt
+[4/6] Emitting module HogarCore
+[5/6] Compiling HogarCore FamilyWorkspace.swift
+[6/7] Compiling HogarCore SupabaseClient.swift
+[8/11] Compiling HogarCoreTests FamilyWorkspaceTests.swift
+[9/11] Emitting module HogarCoreTests
+[10/11] Compiling HogarCoreTests FamilyClientTests.swift
+[11/19] /workspace/Jizgo_appa/HogarFinanzas/.build/x86_64-unknown-linux-gnu/debug/HogarFinanzasPackageDiscoveredTests.derived/all-discovered-tests.swift
+[12/20] Write sources
+[13/20] Wrapping AST for HogarCoreTests for debugging
+[14/20] Wrapping AST for HogarCore for debugging
+[16/23] Compiling HogarFinanzasPackageDiscoveredTests all-discovered-tests.swift
+[17/23] Compiling HogarFinanzasPackageDiscoveredTests HogarCoreTests.swift
+[18/23] Emitting module HogarFinanzasPackageDiscoveredTests
+[19/24] /workspace/Jizgo_appa/HogarFinanzas/.build/x86_64-unknown-linux-gnu/debug/HogarFinanzasPackageTests.derived/runner.swift
+[20/25] Write sources
+[21/25] Wrapping AST for HogarFinanzasPackageDiscoveredTests for debugging
+[23/27] Emitting module HogarFinanzasPackageTests
+[24/27] Compiling HogarFinanzasPackageTests runner.swift
+[25/27] Write Objects.LinkFileList
+[26/27] Linking HogarFinanzasPackageTests.xctest
+Build complete! (5.16s)
+Test Suite 'All tests' started at 2026-11-01 15:25:07.447
+Test Suite 'debug.xctest' started at 2026-11-01 15:25:07.448
+Test Suite 'BankNoticeTests' started at 2026-11-01 15:25:07.448
+Test Case 'BankNoticeTests.testBalanceAndForeignCurrencyAreNotGuessedAsCharge' started at 2026-11-01 15:25:07.448
+Test Case 'BankNoticeTests.testBalanceAndForeignCurrencyAreNotGuessedAsCharge' passed (0.01 seconds)
+Test Case 'BankNoticeTests.testBankRegistrationRetainsAuthorPermissions' started at 2026-11-01 15:25:07.458
 Test Case 'BankNoticeTests.testBankRegistrationRetainsAuthorPermissions' passed (0.001 seconds)
-Test Case 'BankNoticeTests.testCardsDatesCodesAndMalformedAmountsAreNotAmounts' started at 2026-11-01 14:11:17.553
-Test Case 'BankNoticeTests.testCardsDatesCodesAndMalformedAmountsAreNotAmounts' passed (0.008 seconds)
-Test Case 'BankNoticeTests.testGroupedAndEnglishDecimalAmounts' started at 2026-11-01 14:11:17.560
-Test Case 'BankNoticeTests.testGroupedAndEnglishDecimalAmounts' passed (0.011 seconds)
-Test Case 'BankNoticeTests.testIncomeAndAmbiguousDirection' started at 2026-11-01 14:11:17.572
+Test Case 'BankNoticeTests.testCardsDatesCodesAndMalformedAmountsAreNotAmounts' started at 2026-11-01 15:25:07.459
+Test Case 'BankNoticeTests.testCardsDatesCodesAndMalformedAmountsAreNotAmounts' passed (0.005 seconds)
+Test Case 'BankNoticeTests.testGroupedAndEnglishDecimalAmounts' started at 2026-11-01 15:25:07.464
+Test Case 'BankNoticeTests.testGroupedAndEnglishDecimalAmounts' passed (0.008 seconds)
+Test Case 'BankNoticeTests.testIncomeAndAmbiguousDirection' started at 2026-11-01 15:25:07.472
 Test Case 'BankNoticeTests.testIncomeAndAmbiguousDirection' passed (0.004 seconds)
-Test Case 'BankNoticeTests.testInputLimits' started at 2026-11-01 14:11:17.576
-Test Case 'BankNoticeTests.testInputLimits' passed (0.003 seconds)
-Test Case 'BankNoticeTests.testMultipleAmountsDoNotSelectBalanceAsExpense' started at 2026-11-01 14:11:17.580
-Test Case 'BankNoticeTests.testMultipleAmountsDoNotSelectBalanceAsExpense' passed (0.005 seconds)
-Test Case 'BankNoticeTests.testNoMutationBeforeConfirmationAndIdempotentRetry' started at 2026-11-01 14:11:17.584
-Test Case 'BankNoticeTests.testNoMutationBeforeConfirmationAndIdempotentRetry' passed (0.002 seconds)
-Test Case 'BankNoticeTests.testPendingNoticeRequiresManualChoice' started at 2026-11-01 14:11:17.586
-Test Case 'BankNoticeTests.testPendingNoticeRequiresManualChoice' passed (0.002 seconds)
-Test Case 'BankNoticeTests.testPossibleDuplicateRequiresSeparateAcknowledgment' started at 2026-11-01 14:11:17.588
-Test Case 'BankNoticeTests.testPossibleDuplicateRequiresSeparateAcknowledgment' passed (0.001 seconds)
-Test Case 'BankNoticeTests.testRetryCannotResurrectDeletedMovement' started at 2026-11-01 14:11:17.589
-Test Case 'BankNoticeTests.testRetryCannotResurrectDeletedMovement' passed (0.001 seconds)
-Test Case 'BankNoticeTests.testScreenshotTextIsNotPartOfStoredDraftOrBackup' started at 2026-11-01 14:11:17.591
+Test Case 'BankNoticeTests.testInputLimits' started at 2026-11-01 15:25:07.476
+Test Case 'BankNoticeTests.testInputLimits' passed (0.001 seconds)
+Test Case 'BankNoticeTests.testMultipleAmountsDoNotSelectBalanceAsExpense' started at 2026-11-01 15:25:07.477
+Test Case 'BankNoticeTests.testMultipleAmountsDoNotSelectBalanceAsExpense' passed (0.002 seconds)
+Test Case 'BankNoticeTests.testNoMutationBeforeConfirmationAndIdempotentRetry' started at 2026-11-01 15:25:07.479
+Test Case 'BankNoticeTests.testNoMutationBeforeConfirmationAndIdempotentRetry' passed (0.001 seconds)
+Test Case 'BankNoticeTests.testPendingNoticeRequiresManualChoice' started at 2026-11-01 15:25:07.480
+Test Case 'BankNoticeTests.testPendingNoticeRequiresManualChoice' passed (0.001 seconds)
+Test Case 'BankNoticeTests.testPossibleDuplicateRequiresSeparateAcknowledgment' started at 2026-11-01 15:25:07.482
+Test Case 'BankNoticeTests.testPossibleDuplicateRequiresSeparateAcknowledgment' passed (0.0 seconds)
+Test Case 'BankNoticeTests.testRetryCannotResurrectDeletedMovement' started at 2026-11-01 15:25:07.482
+Test Case 'BankNoticeTests.testRetryCannotResurrectDeletedMovement' passed (0.0 seconds)
+Test Case 'BankNoticeTests.testScreenshotTextIsNotPartOfStoredDraftOrBackup' started at 2026-11-01 15:25:07.483
 Test Case 'BankNoticeTests.testScreenshotTextIsNotPartOfStoredDraftOrBackup' passed (0.004 seconds)
-Test Case 'BankNoticeTests.testSecurityCodesAndRejectedOperationsAreRejected' started at 2026-11-01 14:11:17.595
-Test Case 'BankNoticeTests.testSecurityCodesAndRejectedOperationsAreRejected' passed (0.102 seconds)
-Test Case 'BankNoticeTests.testSpanishExpenseAndMerchant' started at 2026-11-01 14:11:17.696
-Test Case 'BankNoticeTests.testSpanishExpenseAndMerchant' passed (0.001 seconds)
-Test Suite 'BankNoticeTests' passed at 2026-11-01 14:11:17.698
-	 Executed 14 tests, with 0 failures (0 unexpected) in 0.157 (0.157) seconds
-Test Suite 'EntryTagTests' started at 2026-11-01 14:11:17.698
-Test Case 'EntryTagTests.testInvalidTagsInBackupOrMutationAreRejected' started at 2026-11-01 14:11:17.698
-Test Case 'EntryTagTests.testInvalidTagsInBackupOrMutationAreRejected' passed (0.002 seconds)
-Test Case 'EntryTagTests.testNormalizeTagsWithoutLosingDisplayNames' started at 2026-11-01 14:11:17.700
+Test Case 'BankNoticeTests.testSecurityCodesAndRejectedOperationsAreRejected' started at 2026-11-01 15:25:07.487
+Test Case 'BankNoticeTests.testSecurityCodesAndRejectedOperationsAreRejected' passed (0.001 seconds)
+Test Case 'BankNoticeTests.testSpanishExpenseAndMerchant' started at 2026-11-01 15:25:07.488
+Test Case 'BankNoticeTests.testSpanishExpenseAndMerchant' passed (0.003 seconds)
+Test Suite 'BankNoticeTests' passed at 2026-11-01 15:25:07.490
+	 Executed 14 tests, with 0 failures (0 unexpected) in 0.041 (0.041) seconds
+Test Suite 'EntryTagTests' started at 2026-11-01 15:25:07.490
+Test Case 'EntryTagTests.testInvalidTagsInBackupOrMutationAreRejected' started at 2026-11-01 15:25:07.490
+Test Case 'EntryTagTests.testInvalidTagsInBackupOrMutationAreRejected' passed (0.0 seconds)
+Test Case 'EntryTagTests.testNormalizeTagsWithoutLosingDisplayNames' started at 2026-11-01 15:25:07.491
 Test Case 'EntryTagTests.testNormalizeTagsWithoutLosingDisplayNames' passed (0.0 seconds)
-Test Case 'EntryTagTests.testTagRoundTripAndBackwardsCompatibility' started at 2026-11-01 14:11:17.700
-Test Case 'EntryTagTests.testTagRoundTripAndBackwardsCompatibility' passed (0.005 seconds)
-Test Case 'EntryTagTests.testTagValidation' started at 2026-11-01 14:11:17.705
-Test Case 'EntryTagTests.testTagValidation' passed (0.002 seconds)
-Test Case 'EntryTagTests.testTagsAreSearchableAndFilterableWithoutChangingTotals' started at 2026-11-01 14:11:17.707
+Test Case 'EntryTagTests.testTagRoundTripAndBackwardsCompatibility' started at 2026-11-01 15:25:07.491
+Test Case 'EntryTagTests.testTagRoundTripAndBackwardsCompatibility' passed (0.003 seconds)
+Test Case 'EntryTagTests.testTagValidation' started at 2026-11-01 15:25:07.494
+Test Case 'EntryTagTests.testTagValidation' passed (0.0 seconds)
+Test Case 'EntryTagTests.testTagsAreSearchableAndFilterableWithoutChangingTotals' started at 2026-11-01 15:25:07.494
 Test Case 'EntryTagTests.testTagsAreSearchableAndFilterableWithoutChangingTotals' passed (0.001 seconds)
-Test Suite 'EntryTagTests' passed at 2026-11-01 14:11:17.707
-	 Executed 5 tests, with 0 failures (0 unexpected) in 0.009 (0.009) seconds
-Test Suite 'FinanceTests' started at 2026-11-01 14:11:17.708
-Test Case 'FinanceTests.testAuthorAndAttributedMemberDiffer' started at 2026-11-01 14:11:17.708
-Test Case 'FinanceTests.testAuthorAndAttributedMemberDiffer' passed (0.001 seconds)
-Test Case 'FinanceTests.testBudgetHistoryAndOverspend' started at 2026-11-01 14:11:17.709
+Test Suite 'EntryTagTests' passed at 2026-11-01 15:25:07.495
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.004 (0.004) seconds
+Test Suite 'FamilyClientTests' started at 2026-11-01 15:25:07.495
+Test Case 'FamilyClientTests.testConfigurationRejectsSecretsAndInsecureEndpoints' started at 2026-11-01 15:25:07.495
+Test Case 'FamilyClientTests.testConfigurationRejectsSecretsAndInsecureEndpoints' passed (0.001 seconds)
+Test Case 'FamilyClientTests.testFinancialRPCUsesJwtAndStableOperationInsteadOfTrustingClientActor' started at 2026-11-01 15:25:07.495
+Test Case 'FamilyClientTests.testFinancialRPCUsesJwtAndStableOperationInsteadOfTrustingClientActor' passed (0.001 seconds)
+Test Case 'FamilyClientTests.testInvalidJsonAndEmptySigninAreNotAcceptedAsSuccess' started at 2026-11-01 15:25:07.497
+Test Case 'FamilyClientTests.testInvalidJsonAndEmptySigninAreNotAcceptedAsSuccess' passed (0.001 seconds)
+Test Case 'FamilyClientTests.testInvalidRemoteHouseholdIsRejectedBeforePresentation' started at 2026-11-01 15:25:07.497
+Test Case 'FamilyClientTests.testInvalidRemoteHouseholdIsRejectedBeforePresentation' passed (0.001 seconds)
+Test Case 'FamilyClientTests.testPasswordChangeUsesAuthenticatedPutAndRejectsShortPasswords' started at 2026-11-01 15:25:07.498
+Test Case 'FamilyClientTests.testPasswordChangeUsesAuthenticatedPutAndRejectsShortPasswords' passed (0.102 seconds)
+Test Case 'FamilyClientTests.testRefreshCannotSilentlySwitchAccounts' started at 2026-11-01 15:25:07.600
+Test Case 'FamilyClientTests.testRefreshCannotSilentlySwitchAccounts' passed (0.001 seconds)
+Test Case 'FamilyClientTests.testServerErrorsAreMappedWithoutLeakingPayloads' started at 2026-11-01 15:25:07.601
+Test Case 'FamilyClientTests.testServerErrorsAreMappedWithoutLeakingPayloads' passed (0.003 seconds)
+Test Case 'FamilyClientTests.testSignInUsesAuthEndpointAndDoesNotSendActorIdentity' started at 2026-11-01 15:25:07.603
+Test Case 'FamilyClientTests.testSignInUsesAuthEndpointAndDoesNotSendActorIdentity' passed (0.0 seconds)
+Test Suite 'FamilyClientTests' passed at 2026-11-01 15:25:07.604
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.109 (0.109) seconds
+Test Suite 'FamilyWorkspaceTests' started at 2026-11-01 15:25:07.604
+Test Case 'FamilyWorkspaceTests.testAdminCanKeepHistoricalAttributionAfterRevocation' started at 2026-11-01 15:25:07.604
+Test Case 'FamilyWorkspaceTests.testAdminCanKeepHistoricalAttributionAfterRevocation' passed (0.001 seconds)
+Test Case 'FamilyWorkspaceTests.testArchiveRetainsEntireQueueBeforeConflictReplacement' started at 2026-11-01 15:25:07.604
+Test Case 'FamilyWorkspaceTests.testArchiveRetainsEntireQueueBeforeConflictReplacement' passed (0.004 seconds)
+Test Case 'FamilyWorkspaceTests.testCorruptCacheRecoveryRequiresConfirmationAndPreservesOriginalBytes' started at 2026-11-01 15:25:07.608
+Test Case 'FamilyWorkspaceTests.testCorruptCacheRecoveryRequiresConfirmationAndPreservesOriginalBytes' passed (0.001 seconds)
+Test Case 'FamilyWorkspaceTests.testImmutableQueueKeepsExpectedRevisionsAndAcknowledgesInOrder' started at 2026-11-01 15:25:07.609
+Test Case 'FamilyWorkspaceTests.testImmutableQueueKeepsExpectedRevisionsAndAcknowledgesInOrder' passed (0.001 seconds)
+Test Case 'FamilyWorkspaceTests.testLocalMigrationDoesNotInventVerifiedAuthorsOrDeleteOriginal' started at 2026-11-01 15:25:07.611
+Test Case 'FamilyWorkspaceTests.testLocalMigrationDoesNotInventVerifiedAuthorsOrDeleteOriginal' passed (0.0 seconds)
+Test Case 'FamilyWorkspaceTests.testMissingLocalAuthorizationOrCorruptQueueRejected' started at 2026-11-01 15:25:07.611
+Test Case 'FamilyWorkspaceTests.testMissingLocalAuthorizationOrCorruptQueueRejected' passed (0.001 seconds)
+Test Case 'FamilyWorkspaceTests.testOutOfOrderOrForgedAckCannotRemovePendingChanges' started at 2026-11-01 15:25:07.612
+Test Case 'FamilyWorkspaceTests.testOutOfOrderOrForgedAckCannotRemovePendingChanges' passed (0.0 seconds)
+Test Case 'FamilyWorkspaceTests.testOversizedRevisionIsRejectedBeforeQueueArithmetic' started at 2026-11-01 15:25:07.613
+Test Case 'FamilyWorkspaceTests.testOversizedRevisionIsRejectedBeforeQueueArithmetic' passed (0.0 seconds)
+Test Case 'FamilyWorkspaceTests.testQueueRoundTripAndCorruptFileCannotBeOverwritten' started at 2026-11-01 15:25:07.613
+Test Case 'FamilyWorkspaceTests.testQueueRoundTripAndCorruptFileCannotBeOverwritten' passed (0.001 seconds)
+Test Case 'FamilyWorkspaceTests.testReceiveDoesNotOverwriteOfflineChanges' started at 2026-11-01 15:25:07.614
+Test Case 'FamilyWorkspaceTests.testReceiveDoesNotOverwriteOfflineChanges' passed (0.0 seconds)
+Test Case 'FamilyWorkspaceTests.testRemoteDifferentHomeAndStaleRevisionRejected' started at 2026-11-01 15:25:07.614
+Test Case 'FamilyWorkspaceTests.testRemoteDifferentHomeAndStaleRevisionRejected' passed (0.0 seconds)
+Test Case 'FamilyWorkspaceTests.testRevokedWorkspaceCannotEnqueueOrBecomeWritableByRetry' started at 2026-11-01 15:25:07.615
+Test Case 'FamilyWorkspaceTests.testRevokedWorkspaceCannotEnqueueOrBecomeWritableByRetry' passed (0.0 seconds)
+Test Suite 'FamilyWorkspaceTests' passed at 2026-11-01 15:25:07.615
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.011 (0.011) seconds
+Test Suite 'FinanceTests' started at 2026-11-01 15:25:07.615
+Test Case 'FinanceTests.testAuthorAndAttributedMemberDiffer' started at 2026-11-01 15:25:07.615
+Test Case 'FinanceTests.testAuthorAndAttributedMemberDiffer' passed (0.0 seconds)
+Test Case 'FinanceTests.testBudgetHistoryAndOverspend' started at 2026-11-01 15:25:07.615
 Test Case 'FinanceTests.testBudgetHistoryAndOverspend' passed (0.003 seconds)
-Test Case 'FinanceTests.testChangingKindAndAccountRecalculates' started at 2026-11-01 14:11:17.712
-Test Case 'FinanceTests.testChangingKindAndAccountRecalculates' passed (0.101 seconds)
-Test Case 'FinanceTests.testEditDeleteRecalculate' started at 2026-11-01 14:11:17.813
-Test Case 'FinanceTests.testEditDeleteRecalculate' passed (0.002 seconds)
-Test Case 'FinanceTests.testExactMoney' started at 2026-11-01 14:11:17.815
+Test Case 'FinanceTests.testChangingKindAndAccountRecalculates' started at 2026-11-01 15:25:07.618
+Test Case 'FinanceTests.testChangingKindAndAccountRecalculates' passed (0.001 seconds)
+Test Case 'FinanceTests.testEditDeleteRecalculate' started at 2026-11-01 15:25:07.619
+Test Case 'FinanceTests.testEditDeleteRecalculate' passed (0.0 seconds)
+Test Case 'FinanceTests.testExactMoney' started at 2026-11-01 15:25:07.620
 Test Case 'FinanceTests.testExactMoney' passed (0.0 seconds)
-Test Case 'FinanceTests.testFilters' started at 2026-11-01 14:11:17.816
-Test Case 'FinanceTests.testFilters' passed (0.0 seconds)
-Test Case 'FinanceTests.testGoalDeadlinesAndCeiling' started at 2026-11-01 14:11:17.816
-Test Case 'FinanceTests.testGoalDeadlinesAndCeiling' passed (0.004 seconds)
-Test Case 'FinanceTests.testGoalTargetLimit' started at 2026-11-01 14:11:17.820
+Test Case 'FinanceTests.testFilters' started at 2026-11-01 15:25:07.620
+Test Case 'FinanceTests.testFilters' passed (0.001 seconds)
+Test Case 'FinanceTests.testGoalDeadlinesAndCeiling' started at 2026-11-01 15:25:07.622
+Test Case 'FinanceTests.testGoalDeadlinesAndCeiling' passed (0.002 seconds)
+Test Case 'FinanceTests.testGoalTargetLimit' started at 2026-11-01 15:25:07.624
 Test Case 'FinanceTests.testGoalTargetLimit' passed (0.0 seconds)
-Test Case 'FinanceTests.testInvalidTransferAndNegativeAmountAreAtomic' started at 2026-11-01 14:11:17.821
-Test Case 'FinanceTests.testInvalidTransferAndNegativeAmountAreAtomic' passed (0.002 seconds)
-Test Case 'FinanceTests.testLaterExpenseExposesUncoveredReserves' started at 2026-11-01 14:11:17.823
-Test Case 'FinanceTests.testLaterExpenseExposesUncoveredReserves' passed (0.001 seconds)
-Test Case 'FinanceTests.testMadridMonthBoundaryAndLeapYear' started at 2026-11-01 14:11:17.823
+Test Case 'FinanceTests.testInvalidTransferAndNegativeAmountAreAtomic' started at 2026-11-01 15:25:07.624
+Test Case 'FinanceTests.testInvalidTransferAndNegativeAmountAreAtomic' passed (0.0 seconds)
+Test Case 'FinanceTests.testLaterExpenseExposesUncoveredReserves' started at 2026-11-01 15:25:07.624
+Test Case 'FinanceTests.testLaterExpenseExposesUncoveredReserves' passed (0.0 seconds)
+Test Case 'FinanceTests.testMadridMonthBoundaryAndLeapYear' started at 2026-11-01 15:25:07.625
 Test Case 'FinanceTests.testMadridMonthBoundaryAndLeapYear' passed (0.001 seconds)
-Test Case 'FinanceTests.testMemberCanEditOwnAdminCanEditAll' started at 2026-11-01 14:11:17.824
-Test Case 'FinanceTests.testMemberCanEditOwnAdminCanEditAll' passed (0.001 seconds)
-Test Case 'FinanceTests.testMemberCannotManageConfiguration' started at 2026-11-01 14:11:17.825
-Test Case 'FinanceTests.testMemberCannotManageConfiguration' passed (0.0 seconds)
-Test Case 'FinanceTests.testMinimumFinancialScenario' started at 2026-11-01 14:11:17.825
-Test Case 'FinanceTests.testMinimumFinancialScenario' passed (0.001 seconds)
-Test Case 'FinanceTests.testOfflineConflictDoesNotOverwrite' started at 2026-11-01 14:11:17.826
+Test Case 'FinanceTests.testMemberCanEditOwnAdminCanEditAll' started at 2026-11-01 15:25:07.626
+Test Case 'FinanceTests.testMemberCanEditOwnAdminCanEditAll' passed (0.0 seconds)
+Test Case 'FinanceTests.testMemberCannotManageConfiguration' started at 2026-11-01 15:25:07.627
+Test Case 'FinanceTests.testMemberCannotManageConfiguration' passed (0.001 seconds)
+Test Case 'FinanceTests.testMinimumFinancialScenario' started at 2026-11-01 15:25:07.627
+Test Case 'FinanceTests.testMinimumFinancialScenario' passed (0.0 seconds)
+Test Case 'FinanceTests.testOfflineConflictDoesNotOverwrite' started at 2026-11-01 15:25:07.628
 Test Case 'FinanceTests.testOfflineConflictDoesNotOverwrite' passed (0.0 seconds)
-Test Case 'FinanceTests.testOpeningIsNotIncome' started at 2026-11-01 14:11:17.826
+Test Case 'FinanceTests.testOpeningIsNotIncome' started at 2026-11-01 15:25:07.628
 Test Case 'FinanceTests.testOpeningIsNotIncome' passed (0.0 seconds)
-Test Case 'FinanceTests.testRejectAmbiguousMoney' started at 2026-11-01 14:11:17.827
+Test Case 'FinanceTests.testRejectAmbiguousMoney' started at 2026-11-01 15:25:07.628
 Test Case 'FinanceTests.testRejectAmbiguousMoney' passed (0.0 seconds)
-Test Case 'FinanceTests.testReservationsCannotBeDuplicatedOrOverbooked' started at 2026-11-01 14:11:17.827
+Test Case 'FinanceTests.testReservationsCannotBeDuplicatedOrOverbooked' started at 2026-11-01 15:25:07.629
 Test Case 'FinanceTests.testReservationsCannotBeDuplicatedOrOverbooked' passed (0.0 seconds)
-Test Case 'FinanceTests.testRetryIsIdempotentAndDeleteIsTombstone' started at 2026-11-01 14:11:17.827
+Test Case 'FinanceTests.testRetryIsIdempotentAndDeleteIsTombstone' started at 2026-11-01 15:25:07.629
 Test Case 'FinanceTests.testRetryIsIdempotentAndDeleteIsTombstone' passed (0.0 seconds)
-Test Case 'FinanceTests.testRevocationAndLeaving' started at 2026-11-01 14:11:17.828
-Test Case 'FinanceTests.testRevocationAndLeaving' passed (0.001 seconds)
-Test Case 'FinanceTests.testRevokedActorCannotRetryAcknowledgedOperation' started at 2026-11-01 14:11:17.828
+Test Case 'FinanceTests.testRevocationAndLeaving' started at 2026-11-01 15:25:07.629
+Test Case 'FinanceTests.testRevocationAndLeaving' passed (0.0 seconds)
+Test Case 'FinanceTests.testRevokedActorCannotRetryAcknowledgedOperation' started at 2026-11-01 15:25:07.630
 Test Case 'FinanceTests.testRevokedActorCannotRetryAcknowledgedOperation' passed (0.0 seconds)
-Test Case 'FinanceTests.testUnconfiguredServiceFailsClosed' started at 2026-11-01 14:11:17.829
+Test Case 'FinanceTests.testUnconfiguredServiceFailsClosed' started at 2026-11-01 15:25:07.630
 Test Case 'FinanceTests.testUnconfiguredServiceFailsClosed' passed (0.0 seconds)
-Test Case 'FinanceTests.testYearBoundaryAndDST' started at 2026-11-01 14:11:17.829
+Test Case 'FinanceTests.testYearBoundaryAndDST' started at 2026-11-01 15:25:07.630
 Test Case 'FinanceTests.testYearBoundaryAndDST' passed (0.001 seconds)
-Test Suite 'FinanceTests' passed at 2026-11-01 14:11:17.830
-	 Executed 23 tests, with 0 failures (0 unexpected) in 0.121 (0.121) seconds
-Test Suite 'LegacyImportTests' started at 2026-11-01 14:11:17.830
-Test Case 'LegacyImportTests.testEditingAndDeletingGoalReleasesWithoutExpense' started at 2026-11-01 14:11:17.830
-Test Case 'LegacyImportTests.testEditingAndDeletingGoalReleasesWithoutExpense' passed (0.003 seconds)
-Test Case 'LegacyImportTests.testExistingOverspendRemainsVisibleAfterImport' started at 2026-11-01 14:11:17.833
+Test Suite 'FinanceTests' passed at 2026-11-01 15:25:07.631
+	 Executed 23 tests, with 0 failures (0 unexpected) in 0.016 (0.016) seconds
+Test Suite 'LegacyImportTests' started at 2026-11-01 15:25:07.631
+Test Case 'LegacyImportTests.testEditingAndDeletingGoalReleasesWithoutExpense' started at 2026-11-01 15:25:07.631
+Test Case 'LegacyImportTests.testEditingAndDeletingGoalReleasesWithoutExpense' passed (0.002 seconds)
+Test Case 'LegacyImportTests.testExistingOverspendRemainsVisibleAfterImport' started at 2026-11-01 15:25:07.633
 Test Case 'LegacyImportTests.testExistingOverspendRemainsVisibleAfterImport' passed (0.001 seconds)
-Test Case 'LegacyImportTests.testFailedDiskSaveKeepsParentFile' started at 2026-11-01 14:11:17.833
-Test Case 'LegacyImportTests.testFailedDiskSaveKeepsParentFile' passed (0.001 seconds)
-Test Case 'LegacyImportTests.testGoalMonthlyFormulaMatchesPrototype' started at 2026-11-01 14:11:17.834
+Test Case 'LegacyImportTests.testFailedDiskSaveKeepsParentFile' started at 2026-11-01 15:25:07.634
+Test Case 'LegacyImportTests.testFailedDiskSaveKeepsParentFile' passed (0.0 seconds)
+Test Case 'LegacyImportTests.testGoalMonthlyFormulaMatchesPrototype' started at 2026-11-01 15:25:07.634
 Test Case 'LegacyImportTests.testGoalMonthlyFormulaMatchesPrototype' passed (0.0 seconds)
-Test Case 'LegacyImportTests.testImportRejectsCorruptAndInconsistentData' started at 2026-11-01 14:11:17.835
-Test Case 'LegacyImportTests.testImportRejectsCorruptAndInconsistentData' passed (0.102 seconds)
-Test Case 'LegacyImportTests.testImportedAuthorshipIsNotInventedOnEdit' started at 2026-11-01 14:11:17.937
-Test Case 'LegacyImportTests.testImportedAuthorshipIsNotInventedOnEdit' passed (0.002 seconds)
-Test Case 'LegacyImportTests.testPrototypeImportPreservesFinancialScenarioAndAttribution' started at 2026-11-01 14:11:17.938
-Test Case 'LegacyImportTests.testPrototypeImportPreservesFinancialScenarioAndAttribution' passed (0.002 seconds)
-Test Suite 'LegacyImportTests' passed at 2026-11-01 14:11:17.940
-	 Executed 7 tests, with 0 failures (0 unexpected) in 0.11 (0.11) seconds
-Test Suite 'PersistenceTests' started at 2026-11-01 14:11:17.940
-Test Case 'PersistenceTests.testBackupRoundTripAndConfirmation' started at 2026-11-01 14:11:17.940
-Test Case 'PersistenceTests.testBackupRoundTripAndConfirmation' passed (0.004 seconds)
-Test Case 'PersistenceTests.testCorruptReadCannotOverwriteOriginal' started at 2026-11-01 14:11:17.944
+Test Case 'LegacyImportTests.testImportRejectsCorruptAndInconsistentData' started at 2026-11-01 15:25:07.634
+Test Case 'LegacyImportTests.testImportRejectsCorruptAndInconsistentData' passed (0.001 seconds)
+Test Case 'LegacyImportTests.testImportedAuthorshipIsNotInventedOnEdit' started at 2026-11-01 15:25:07.636
+Test Case 'LegacyImportTests.testImportedAuthorshipIsNotInventedOnEdit' passed (0.001 seconds)
+Test Case 'LegacyImportTests.testPrototypeImportPreservesFinancialScenarioAndAttribution' started at 2026-11-01 15:25:07.637
+Test Case 'LegacyImportTests.testPrototypeImportPreservesFinancialScenarioAndAttribution' passed (0.003 seconds)
+Test Suite 'LegacyImportTests' passed at 2026-11-01 15:25:07.640
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.008 (0.008) seconds
+Test Suite 'PersistenceTests' started at 2026-11-01 15:25:07.640
+Test Case 'PersistenceTests.testBackupRoundTripAndConfirmation' started at 2026-11-01 15:25:07.640
+Test Case 'PersistenceTests.testBackupRoundTripAndConfirmation' passed (0.001 seconds)
+Test Case 'PersistenceTests.testCorruptReadCannotOverwriteOriginal' started at 2026-11-01 15:25:07.640
 Test Case 'PersistenceTests.testCorruptReadCannotOverwriteOriginal' passed (0.001 seconds)
-Test Case 'PersistenceTests.testDecodedMoneyAndReferencesAreValidated' started at 2026-11-01 14:11:17.946
+Test Case 'PersistenceTests.testDecodedMoneyAndReferencesAreValidated' started at 2026-11-01 15:25:07.641
 Test Case 'PersistenceTests.testDecodedMoneyAndReferencesAreValidated' passed (0.001 seconds)
-Test Case 'PersistenceTests.testExportRetainsTombstonesAndOperationIDs' started at 2026-11-01 14:11:17.947
+Test Case 'PersistenceTests.testExportRetainsTombstonesAndOperationIDs' started at 2026-11-01 15:25:07.642
 Test Case 'PersistenceTests.testExportRetainsTombstonesAndOperationIDs' passed (0.001 seconds)
-Test Case 'PersistenceTests.testInvalidRestorePreservesValidFile' started at 2026-11-01 14:11:17.948
-Test Case 'PersistenceTests.testInvalidRestorePreservesValidFile' passed (0.001 seconds)
-Test Case 'PersistenceTests.testInvalidSaveDoesNotReplaceFile' started at 2026-11-01 14:11:17.948
-Test Case 'PersistenceTests.testInvalidSaveDoesNotReplaceFile' passed (0.004 seconds)
-Test Case 'PersistenceTests.testLoadRequiredBeforeSave' started at 2026-11-01 14:11:17.954
-Test Case 'PersistenceTests.testLoadRequiredBeforeSave' passed (0.003 seconds)
-Test Case 'PersistenceTests.testMalformedBackupValidation' started at 2026-11-01 14:11:17.958
+Test Case 'PersistenceTests.testInvalidRestorePreservesValidFile' started at 2026-11-01 15:25:07.643
+Test Case 'PersistenceTests.testInvalidRestorePreservesValidFile' passed (0.0 seconds)
+Test Case 'PersistenceTests.testInvalidSaveDoesNotReplaceFile' started at 2026-11-01 15:25:07.643
+Test Case 'PersistenceTests.testInvalidSaveDoesNotReplaceFile' passed (0.0 seconds)
+Test Case 'PersistenceTests.testLoadRequiredBeforeSave' started at 2026-11-01 15:25:07.644
+Test Case 'PersistenceTests.testLoadRequiredBeforeSave' passed (0.0 seconds)
+Test Case 'PersistenceTests.testMalformedBackupValidation' started at 2026-11-01 15:25:07.644
 Test Case 'PersistenceTests.testMalformedBackupValidation' passed (0.001 seconds)
-Test Case 'PersistenceTests.testPersistenceRoundTrip' started at 2026-11-01 14:11:17.959
-Test Case 'PersistenceTests.testPersistenceRoundTrip' passed (0.002 seconds)
-Test Suite 'PersistenceTests' passed at 2026-11-01 14:11:17.962
-	 Executed 9 tests, with 0 failures (0 unexpected) in 0.019 (0.019) seconds
-Test Suite 'debug.xctest' passed at 2026-11-01 14:11:17.962
-	 Executed 58 tests, with 0 failures (0 unexpected) in 0.415 (0.415) seconds
-Test Suite 'All tests' passed at 2026-11-01 14:11:17.962
-	 Executed 58 tests, with 0 failures (0 unexpected) in 0.415 (0.415) seconds
+Test Case 'PersistenceTests.testPersistenceRoundTrip' started at 2026-11-01 15:25:07.645
+Test Case 'PersistenceTests.testPersistenceRoundTrip' passed (0.001 seconds)
+Test Suite 'PersistenceTests' passed at 2026-11-01 15:25:07.645
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.006 (0.006) seconds
+Test Suite 'debug.xctest' passed at 2026-11-01 15:25:07.645
+	 Executed 78 tests, with 0 failures (0 unexpected) in 0.194 (0.194) seconds
+Test Suite 'All tests' passed at 2026-11-01 15:25:07.645
+	 Executed 78 tests, with 0 failures (0 unexpected) in 0.194 (0.194) seconds
 ◇ Test run started.
 ↳ Testing Library Version: 6.2.1 (c9d57c83568b06d)
 ↳ Target Platform: x86_64-unknown-linux-gnu

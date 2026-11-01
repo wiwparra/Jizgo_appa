@@ -103,7 +103,8 @@ public enum Ledger {
         if entry.kind == .transfer {
             guard let destination = entry.destinationID, destination != entry.accountID, household.accounts.contains(where: { $0.id == destination }) else { throw FinanceError.invalid("Selecciona una cuenta de destino diferente a la de origen.") }
         }
-        guard household.members.contains(where: { $0.id == entry.memberID && $0.active }) else { throw FinanceError.invalid("Miembro inactivo.") }
+        let previousMember = household.entries.first(where: { $0.id == entry.id })?.memberID
+        guard household.members.contains(where: { $0.id == entry.memberID && ($0.active || previousMember == entry.memberID) }) else { throw FinanceError.invalid("Miembro inactivo.") }
         try commit(&household) { candidate in
             if let index = candidate.entries.firstIndex(where: { $0.id == entry.id }) {
                 let old = candidate.entries[index]

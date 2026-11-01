@@ -4,7 +4,6 @@ import HogarCore
 
 struct PeriodPicker: View {
     @Binding var date: Date
-    // Adaptado de MonthPicker del prototipo 0.1, con calendario explícito de Madrid.
     var body: some View {
         HStack {
             Button { shift(-1) } label: { Image(systemName: "chevron.left") }.accessibilityLabel("Mes anterior")
@@ -15,7 +14,6 @@ struct PeriodPicker: View {
         }.buttonStyle(.borderless)
     }
     private func shift(_ offset: Int) { date = Calendar.household.date(byAdding: .month, value: offset, to: date) ?? date }
-
 }
 struct DashboardView: View {
     @EnvironmentObject private var store: AppStore
@@ -26,40 +24,59 @@ struct DashboardView: View {
         ScrollView {
             if let home = store.household {
                 let summary = home.summary(month: Month(date))
-                VStack(alignment: .leading, spacing: 24) {
-                    PeriodPicker(date: $date)
-                    Text("Tu hogar, en perspectiva").font(.largeTitle.bold())
-                    Text("Periodo: \(Month(date).label) · EUR").foregroundStyle(.secondary)
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 230), alignment: .leading)], spacing: 16) {
-                        metric("Saldo registrado", summary.balance, "Saldos iniciales más todos los movimientos, a cualquier fecha.")
-                        metric("Ingresos del periodo", summary.income, "Excluye saldos iniciales y transferencias.")
-                        metric("Gastos del periodo", summary.expenses, "Gastos registrados durante el mes seleccionado.")
-                        metric("Resultado del periodo", summary.result, "Ingresos menos gastos del mes.")
-                        metric("Reservado para metas", summary.reserved, "Asignaciones virtuales; no mueven dinero bancario.")
-                        metric("Saldo sin reservar", summary.unreserved, "Saldo total menos reservas. No descuenta compromisos futuros.")
-                    }
-                    if summary.uncovered > 0 { Label("Reservas sin cobertura: \(Money.format(summary.uncovered)). Revisa tus metas; los gastos se conservan.", systemImage: "exclamationmark.triangle.fill").foregroundStyle(.orange) }
-                    GroupBox("Evolución mensual · resultado") {
-                        Chart(months, id: \.self) { month in
-                            BarMark(x: .value("Mes", month.label), y: .value("Céntimos", home.summary(month: month).result))
-                                .foregroundStyle(.teal)
-                                .accessibilityLabel("\(month.label): \(Money.format(home.summary(month: month).result))")
-                        }.frame(height: 200).chartYAxis(.hidden)
-                        Text("Barras en céntimos; detalle exacto en la lista.").font(.caption)
-                        ForEach(months, id: \.self) { month in LabeledContent(month.label, value: Money.format(home.summary(month: month).result)) }
-                    }
-                    GroupBox("Distribución del gasto del periodo") {
-                        VStack {
-                            ForEach(HogarCore.Category.allCases, id: \.self) { category in
-                                let spent = home.filtered(EntryFilter(month: Month(date), category: category)).filter { $0.kind == .expense }.reduce(Int64(0)) { $0 + $1.amount.cents }
-                                LabeledContent(category.rawValue, value: Money.format(spent))
-                            }
+                VStack(alignment: .leading, spacing: 16) {
+                    if store.demo { Label("Demostración", systemImage: "testtube.2").font(.caption).foregroundStyle(.secondary) }
+                    if store.familyEnabled {
+                        HStack {
+                            Label(syncTitle, systemImage: "person.2").font(.caption).foregroundStyle(.secondary)
+                            Spacer()
+                            Button("Actualizar") { Task { await store.synchronizeFamily() } }.font(.caption)
                         }
                     }
-                    if home.accounts.isEmpty { Text("Empieza añadiendo una cuenta y su saldo inicial en Cuentas.").foregroundStyle(.secondary) }
-                }.padding(24)
+                    PeriodPicker(date: $date)
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("Saldo registrado total").font(.subheadline).foregroundStyle(.secondary)
+                        Text(Money.format(summary.balance)).font(.largeTitle.bold()).monospacedDigit().minimumScaleFactor(0.65)
+                        ViewThatFits(in: .horizontal) {
+                            HStack(spacing: 24) {
+                                figure("Reservado", summary.reserved)
+                                Spacer(minLength: 0)
+                                figure("Sin reservar", summary.unreserved)
+                            }
+                            VStack(alignment: .leading, spacing: 12) {
+                                LabeledContent("Reservado", value: Money.format(summary.reserved))
+                                LabeledContent("Sin reservar", value: Money.format(summary.unreserved))
+                            }
+                        }
+                        Text("Sin reservar no descuenta recibos futuros.").font(.caption).foregroundStyle(.secondary)
+                    }.padding(16).frame(maxWidth: .infinity, alignment: .leading).background(.teal.opacity(0.08), in: RoundedRectangle(cornerRadius: 18))
+                    ViewThatFits(in: .horizontal) {
+                        HStack(alignment: .top, spacing: 20) {
+                            figure("Ingresos", summary.income)
+                            Spacer(minLength: 0)
+                            figure("Gastos", summary.expenses)
+                            Spacer(minLength: 0)
+                            figure("Resultado", summary.result)
+                        }
+                        VStack(spacing: 8) {
+                            LabeledContent("Ingresos", value: Money.format(summary.income))
+                            LabeledContent("Gastos", value: Money.format(summary.expenses))
+                            LabeledContent("Resultado", value: Money.format(summary.result))
+                        }
+                    }.padding(.horizontal, 4)
+                    if summary.uncovered > 0 {
+                        Label("Reservas sin cobertura: \(Money.format(summary.uncovered))", systemImage: "exclamationmark.triangle.fill").font(.callout).foregroundStyle(.orange)
+                    }
+                    Button { add = true } label: { Label("Registrar gasto", systemImage: "plus").frame(maxWidth: .infinity).padding(.vertical, 6) }.buttonStyle(.borderedProminent).disabled(home.accounts.isEmpty)
+                    if home.accounts.isEmpty { Text("Añade tu primera cuenta en Cuentas.").font(.callout).foregroundStyle(.secondary) }
+                    DisclosureGroup("Detalle y evolución") { details(home, summary: summary) }
+                        .font(.callout).padding(12).background(.quaternary.opacity(0.35), in: RoundedRectangle(cornerRadius: 12))
+                }.padding(16).frame(maxWidth: 760).frame(maxWidth: .infinity)
             }
         }.navigationTitle("Resumen")
+        #if os(iOS)
+        .navigationBarTitleDisplayMode(.inline)
+        #endif
         .toolbar {
             Button { bankImport = true } label: { Label("Desde aviso bancario", systemImage: "text.viewfinder") }.disabled(store.household?.accounts.isEmpty != false)
             Button { add = true } label: { Label("Añadir gasto", systemImage: "plus") }.keyboardShortcut("n", modifiers: .command).disabled(store.household?.accounts.isEmpty != false)
@@ -67,14 +84,45 @@ struct DashboardView: View {
         .sheet(isPresented: $bankImport) { BankNoticeView() }
         .sheet(isPresented: $add) { EntryEditor() }
     }
-    private var months: [Month] {
-        (-5...0).compactMap { Calendar.household.date(byAdding: .month, value: $0, to: date) }.map { Month($0) }
+    private var syncTitle: String {
+        switch store.syncStatus {
+        case .localOnly: "Hogar familiar"
+        case .pending: "Cambios pendientes"
+        case .syncing: "Sincronizando…"
+        case .synced: "Sincronizado"
+        case .error: "Revisar sincronización en Hogar y copias"
+        }
     }
-    private func metric(_ title: String, _ cents: Int64, _ explanation: String) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(title).font(.headline).foregroundStyle(.secondary)
-            Text(Money.format(cents)).font(.title.bold()).monospacedDigit().minimumScaleFactor(0.7)
-            Text(explanation).font(.caption).foregroundStyle(.secondary)
-        }.padding().frame(maxWidth: .infinity, minHeight: 145, alignment: .topLeading).background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 16))
+    private func figure(_ title: String, _ cents: Int64) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(title).font(.caption).foregroundStyle(.secondary)
+            Text(Money.format(cents)).font(.headline).monospacedDigit().fixedSize(horizontal: true, vertical: false)
+        }.accessibilityElement(children: .combine)
     }
+    private func details(_ home: Household, summary: Summary) -> some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("El saldo suma saldos iniciales y todos los movimientos, también los futuros. Las reservas son asignaciones virtuales. Los ingresos, gastos y resultado corresponden al mes seleccionado; no incluyen saldos iniciales ni transferencias.").font(.caption).foregroundStyle(.secondary)
+            GroupBox("Saldo por cuenta") {
+                VStack { ForEach(home.accounts) { account in LabeledContent(account.name, value: Money.format(home.balance(account: account.id))) } }
+            }
+            GroupBox("Evolución de seis meses") {
+                VStack {
+                    Chart(months, id: \.self) { month in
+                        BarMark(x: .value("Mes", month.label), y: .value("Céntimos", home.summary(month: month).result)).foregroundStyle(.teal)
+                            .accessibilityLabel("\(month.label): \(Money.format(home.summary(month: month).result))")
+                    }.frame(height: 170).chartYAxis(.hidden)
+                    ForEach(months, id: \.self) { month in LabeledContent(month.label, value: Money.format(home.summary(month: month).result)) }
+                }
+            }
+            GroupBox("Gastos por categoría") {
+                VStack {
+                    ForEach(HogarCore.Category.allCases, id: \.self) { category in
+                        let spent = home.filtered(EntryFilter(month: Month(date), category: category)).filter { $0.kind == .expense }.reduce(Int64(0)) { $0 + $1.amount.cents }
+                        LabeledContent(category.rawValue, value: Money.format(spent))
+                    }
+                }
+            }
+        }.padding(.top, 12)
+    }
+    private var months: [Month] { (-5...0).compactMap { Calendar.household.date(byAdding: .month, value: $0, to: date) }.map { Month($0) } }
 }

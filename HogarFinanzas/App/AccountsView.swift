@@ -18,7 +18,7 @@ struct AccountsView: View {
             }
             if store.household?.accounts.isEmpty == true { ContentUnavailableView("Añade tu primera cuenta", systemImage: "wallet.pass", description: Text("Introduce el saldo al comenzar el registro. Puedes añadir efectivo y cuentas de ahorro.")) }
         }.navigationTitle("Cuentas")
-        .toolbar { Button { editor = true } label: { Label("Nueva cuenta", systemImage: "plus") } }
+        .toolbar { Button { editor = true } label: { Label("Nueva cuenta", systemImage: "plus") }.disabled(!store.canManageHousehold) }
         .sheet(isPresented: $editor) { AccountEditor() }
     }
 }

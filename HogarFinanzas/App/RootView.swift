@@ -4,6 +4,7 @@ import HogarCore
 private enum SectionItem: String, CaseIterable, Identifiable {
     case summary = "Resumen", entries = "Movimientos", accounts = "Cuentas", plans = "Planificación", settings = "Hogar y copias"
     var id: String { rawValue }
+    var tabTitle: String { switch self { case .plans: "Planes"; case .settings: "Hogar"; default: rawValue } }
     var symbol: String {
         switch self { case .summary: "chart.bar.xaxis"; case .entries: "arrow.up.arrow.down"; case .accounts: "wallet.pass"; case .plans: "target"; case .settings: "house" }
     }
@@ -34,18 +35,11 @@ struct RootView: View {
                 #else
                 TabView {
                     ForEach(SectionItem.allCases) { section in
-                        NavigationStack { content(section) }.tabItem { Label(section.rawValue, systemImage: section.symbol) }
+                        NavigationStack { content(section) }.tabItem { Label(section.tabTitle, systemImage: section.symbol) }
                     }
                 }
                 #endif
             }
-        }
-        .safeAreaInset(edge: .bottom) {
-            HStack {
-                Image(systemName: store.demo ? "testtube.2" : "internaldrive")
-                Text(store.demo ? "DEMOSTRACIÓN · datos separados" : store.syncStatus.label)
-                Spacer()
-            }.font(.caption).padding(8).background(.bar)
         }
         .alert("No se ha podido completar", isPresented: Binding(get: { store.error != nil }, set: { if !$0 { store.error = nil } })) {
             Button("Entendido") { store.error = nil }
@@ -65,6 +59,7 @@ struct WelcomeView: View {
     @EnvironmentObject private var store: AppStore
     @State private var name = "Mi hogar"
     @State private var owner = ""
+    @State private var family = false
     var body: some View {
         NavigationStack {
             Form {
@@ -78,10 +73,12 @@ struct WelcomeView: View {
                     Button("Crear hogar") { store.create(name: name, owner: owner) }.disabled(name.trimmingCharacters(in: .whitespaces).isEmpty || owner.trimmingCharacters(in: .whitespaces).isEmpty)
                 }
                 Section {
-                    Text("Esta versión guarda los datos en este dispositivo. El acceso con cuentas familiares independientes está pendiente de implementación y validación.")
+                    Text("Puedes empezar con datos locales o conectar un hogar compartido con cuentas personales.")
+                    Button("Acceder a un hogar familiar") { family = true }
                     Button("Explorar con datos de demostración") { store.setDemo(true) }
                 }
             }.formStyle(.grouped).navigationTitle("Bienvenido")
+            .sheet(isPresented: $family) { NavigationStack { FamilySettingsView().toolbar { ToolbarItem(placement: .cancellationAction) { Button("Cerrar") { family = false } } } } }
         }
     }
 }

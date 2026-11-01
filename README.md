@@ -1,44 +1,47 @@
 # Hogar Finanzas
 
-Proyecto nativo SwiftUI para iPhone (iOS 17+) y Mac (macOS 14+), con núcleo Swift compartido sin dependencias externas. Interfaz española y EUR.
+Aplicación nativa SwiftUI para iPhone (iOS 17+) y Mac (macOS 14+), con núcleo Swift compartido, interfaz española y EUR. Incluye modo local y una integración familiar preparada para Supabase, que el usuario debe configurar.
 
-**Entrega parcial verificable: núcleo local probado; interfaz Apple y colaboración familiar sin validar. No es una aplicación terminada.**
+**Estado:** 78 pruebas Swift y 23 pruebas de PostgreSQL aprobadas. El código nuevo todavía requiere compilación y ejecución Apple. No se ha activado un proyecto Supabase ni validado la colaboración entre dos cuentas/dispositivos reales. No se presenta como una aplicación terminada.
 
-Abre [HogarFinanzas.xcodeproj](HogarFinanzas/HogarFinanzas.xcodeproj) en Xcode 16 o posterior. Selecciona el esquema HogarFinanzas, My Mac o un simulador de iPhone y ejecuta. Para dispositivo físico selecciona tu equipo y un bundle identifier propio en Signing & Capabilities. No se incluyen certificados, claves ni conexión bancaria.
+## Arranque y actualización
 
-Si ya instalaste una versión anterior, sigue [estos pasos de actualización](HogarFinanzas/docs/ACTUALIZAR.md) para conservar tu configuración y tus datos.
+Abre [HogarFinanzas.xcodeproj](HogarFinanzas/HogarFinanzas.xcodeproj) en Xcode 16 o posterior. Selecciona el esquema HogarFinanzas y My Mac o un simulador. Para iPhone físico selecciona tu Team y un Bundle Identifier propio. El código familiar no necesita iCloud, App Groups ni Sign In with Apple.
 
-Para probar el núcleo:
+Si ya tienes datos o firma configurada, sigue [ACTUALIZAR.md](HogarFinanzas/docs/ACTUALIZAR.md). La actualización añade fuentes, referencias de proyecto y entitlements por plataforma: no basta con copiar las tres vistas de una corrección anterior.
 
 ```sh
 cd HogarFinanzas
 ./Scripts/test.sh
-```
-
-En Linux el entorno preparado tiene Swift 6.2.1 en `/workspace/toolchains`. En un Mac el script usa el Swift de Xcode. Para compilar ambos destinos Apple y repetir las pruebas del núcleo:
-
-```sh
-cd HogarFinanzas
+# Solo en un Mac con Xcode completo:
 ./Scripts/validate-apple.sh
 ```
 
-Ese último script **no se ha ejecutado aquí**: Linux no dispone de Xcode, SDK de Apple ni simulador. Consulta [validación](HogarFinanzas/docs/VALIDATION.md).
+Para el servidor, desde la raíz y con Docker local:
 
-Implementado:
+```sh
+./Supabase/test.sh
+```
 
-- Etiquetas personalizadas por movimiento, con búsqueda y filtro.
-- Propuestas desde texto o captura de un aviso bancario: reconocimiento local, revisión obligatoria, selección de cuenta y confirmación de posibles duplicados. [Uso y límites](HogarFinanzas/docs/AVISOS_BANCARIOS.md). iPhone no permite leer notificaciones de otras apps.
-- Cuentas manuales con saldo inicial; ingresos, gastos y transferencias; edición y eliminación confirmada; búsqueda por concepto/notas y filtros por mes, categoría, cuenta y miembro atribuido.
-- Resumen con saldo por cuenta y total, ingresos/gastos/resultado mensual, reservas y saldo sin reservar; evolución de seis meses y distribución del gasto. Se explican las cifras y la falta de cobertura de reservas.
-- Presupuestos por categoría y mes con historial independiente, consumo, restante y exceso.
-- Metas con creación, edición, eliminación confirmada, vencimiento, aportación mensual, reserva y liberación. Las reservas no generan gastos ni transferencias y no pueden superar el saldo sin reservar.
-- Persistencia local atómica, validación de referencias/importes/versiones, bloqueo ante archivos ilegibles, exportación JSON y restauración validada y confirmada.
-- Importación de copias JSON del prototipo 0.1, con advertencias sobre cuenta conjunta, autoría desconocida e historial de presupuestos inexistente.
-- Navegación con pestañas en iPhone y barra lateral en Mac; formatos españoles, modo oscuro del sistema, fuentes dinámicas, etiquetas accesibles y acceso rápido a nuevo gasto (⌘N en Resumen).
-- Demostración explícita y separada del archivo real. Ningún dato de ejemplo se inserta al crear un hogar real.
+Ese script crea PostgreSQL efímero sin red/puertos, prueba el SQL con roles reales y elimina su contenedor. No contacta con un proyecto alojado. Las pruebas de Auth usan un sustituto de `auth.uid()`: no validan GoTrue ni el correo real.
 
-La lógica de permisos y el reductor de conflictos/reintentos están probados de forma local. **No hay autenticación familiar, invitaciones, transporte de sincronización ni revocación remota implementados.** Se informa «Solo en este dispositivo»; el código no simula sincronización. [Evaluación de iCloud y requisitos pendientes](HogarFinanzas/docs/ICLOUD.md).
+## Funciones
 
-El [informe del prototipo](HogarFinanzas/docs/PROTOTYPE_AUDIT.md) explica lo reutilizado y las diferencias. No se modifica el ZIP original. Los datos del prototipo no se detectan ni reemplazan automáticamente: exporta allí su copia y selecciónala en Hogar y copias de esta versión. Antes de reemplazar, exporta también el hogar actual.
+- Dashboard compacto: saldo total, reservas, saldo sin reservar e ingresos/gastos/resultado del mes. Cuentas, categorías y evolución se despliegan bajo Detalle. El estado de modo local está en Hogar y copias; no hay franja superpuesta a la navegación inferior. Con texto accesible grande se permite desplazamiento en vez de ocultar cifras.
+- Cuentas manuales, saldos iniciales, ingresos/gastos y transferencias neutras en los informes. Crear/editar/eliminar, búsqueda y filtros por mes, cuenta, categoría, miembro y etiqueta.
+- Etiquetas personalizadas, presupuestos históricos por mes, metas y reservas sin gastos ficticios. Se informa de reservas sin cobertura tras un gasto real.
+- Propuestas desde texto o captura bancaria seleccionada, con OCR local, revisión y confirmación. [Uso y límites](HogarFinanzas/docs/AVISOS_BANCARIOS.md). iPhone no permite interceptar ventanas emergentes de la app del banco.
+- Persistencia atómica, bloqueo de escritura ante lectura fallida, copias JSON confirmadas y migración explícita del prototipo. Demostración y datos reales separados.
+- Acceso familiar por cuentas personales Supabase: invitaciones por correo confirmado/código, roles, permisos de autor y administración en PostgreSQL, cola sin conexión, ACK idempotente, conflictos conservados y revocación. [Configuración paso a paso](Supabase/LEEME.md).
 
-Los JSON exportados están en claro. El archivo de iOS usa protección completa; en Mac se emplean sandbox y permisos de archivo. No hay cifrado propio, analítica ni registros de datos financieros. No se ha publicado la app ni contratado ningún servicio.
+La colaboración del código necesita un servicio configurado. Tener el grupo En familia de Apple no conecta los datos. La firma gratuita de Apple conserva sus límites/caducidad para instalar en cada dispositivo; Supabase no distribuye la app.
+
+## Diseño editable en Figma
+
+[Paquete Figma independiente](Design/HogarFinanzas-Dashboard-Figma.zip): iPhone/Mac en claro/oscuro, SVG y un importador que crea textos y capas nativos. [Instrucciones](Design/LEEME.md). Cambiar el diseño en Figma no cambia automáticamente el código.
+
+## Protección y validación
+
+Los importes usan céntimos exactos. Los JSON y archivos exportados contienen finanzas en claro. Las sesiones familiares van en el llavero; solo URL y clave pública publishable/anon van en preferencias. Nunca se incluye service_role, secreto JWT o contraseña PostgreSQL en la app. El servidor externo no tiene cifrado de extremo a extremo: su administrador/proveedor pueden acceder a sus datos según configuración.
+
+No se han creado cuentas externas, contratado servicios, publicado la app, efectuado operaciones bancarias ni modificado/publicado de nuevo el entorno cloud. La preparación actual y sus limitaciones están en [VALIDATION.md](HogarFinanzas/docs/VALIDATION.md), [PLAN.md](HogarFinanzas/docs/PLAN.md) y la [auditoría del prototipo](HogarFinanzas/docs/PROTOTYPE_AUDIT.md).

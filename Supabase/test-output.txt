@@ -1,0 +1,28 @@
+test_admin_can_delete_historical_entry_after_member_revocation (__main__.AuthorityTests.test_admin_can_delete_historical_entry_after_member_revocation) ... ok
+test_author_not_attributed_member_controls_edit (__main__.AuthorityTests.test_author_not_attributed_member_controls_edit) ... ok
+test_budget_history_and_tag_validation (__main__.AuthorityTests.test_budget_history_and_tag_validation) ... ok
+test_cancelled_and_expired_invites_reject (__main__.AuthorityTests.test_cancelled_and_expired_invites_reject) ... ok
+test_concurrent_reservations_cannot_overbook (__main__.AuthorityTests.test_concurrent_reservations_cannot_overbook) ... ok
+test_conflict_and_idempotent_receipt_after_lost_ack (__main__.AuthorityTests.test_conflict_and_idempotent_receipt_after_lost_ack) ... ok
+test_create_retries_use_the_same_home_without_duplicates (__main__.AuthorityTests.test_create_retries_use_the_same_home_without_duplicates) ... ok
+test_financial_scenario_and_transfer_neutrality (__main__.AuthorityTests.test_financial_scenario_and_transfer_neutrality) ... ok
+test_forged_member_list_does_not_grant_admin (__main__.AuthorityTests.test_forged_member_list_does_not_grant_admin) ... ok
+test_imported_unknown_authors_require_admin (__main__.AuthorityTests.test_imported_unknown_authors_require_admin) ... ok
+test_invalid_money_and_references_roll_back (__main__.AuthorityTests.test_invalid_money_and_references_roll_back) ... ok
+test_invitation_binds_confirmed_email_and_retry_is_safe (__main__.AuthorityTests.test_invitation_binds_confirmed_email_and_retry_is_safe) ... ok
+test_json_string_numbers_and_unknown_fields_do_not_poison_readers (__main__.AuthorityTests.test_json_string_numbers_and_unknown_fields_do_not_poison_readers) ... ok
+test_last_admin_cannot_leave_and_member_can_leave (__main__.AuthorityTests.test_last_admin_cannot_leave_and_member_can_leave) ... ok
+test_member_cannot_invite_promote_or_manage_configuration (__main__.AuthorityTests.test_member_cannot_invite_promote_or_manage_configuration) ... ok
+test_member_creates_own_and_admin_can_edit_without_changing_author (__main__.AuthorityTests.test_member_creates_own_and_admin_can_edit_without_changing_author) ... ok
+test_reinvitation_does_not_restore_old_admin_or_reuse_revoked_access (__main__.AuthorityTests.test_reinvitation_does_not_restore_old_admin_or_reuse_revoked_access) ... ok
+test_reservations_serialize_and_later_expense_is_preserved (__main__.AuthorityTests.test_reservations_serialize_and_later_expense_is_preserved) ... ok
+test_revocation_blocks_read_write_and_ack_replay (__main__.AuthorityTests.test_revocation_blocks_read_write_and_ack_replay) ... ok
+test_rls_still_denies_direct_rows_if_a_select_grant_is_added (__main__.AuthorityTests.test_rls_still_denies_direct_rows_if_a_select_grant_is_added) ... ok
+test_tombstone_and_no_resurrection (__main__.AuthorityTests.test_tombstone_and_no_resurrection) ... ok
+test_unauthenticated_unconfirmed_and_stranger_cannot_read (__main__.AuthorityTests.test_unauthenticated_unconfirmed_and_stranger_cannot_read) ... ok
+test_unicode_whitespace_and_control_tags_cannot_poison_readers (__main__.AuthorityTests.test_unicode_whitespace_and_control_tags_cannot_poison_readers) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 44.663s
+
+OK
